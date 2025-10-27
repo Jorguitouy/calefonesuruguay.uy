@@ -1,0 +1,11 @@
+name = "calefones-redirect"
+main = "_worker.js"
+compatibility_date = "2023-10-30"
+
+[env.production]
+routes = [
+  { pattern = "*calefonesuruguay.uy/*", zone_name = "calefonesuruguay.uy" }
+]
+
+[[env.production.vars]]
+TARGET_URL = "https://reparaciondecalefones.uy/"

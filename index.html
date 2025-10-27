@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- REDIRECCIÓN AUTOMÁTICA A REPARACIONDECALEFONES.UY -->
+    <!-- REDIRECCIÓN INMEDIATA A REPARACIONDECALEFONES.UY -->
     <meta http-equiv="refresh" content="0; url=https://reparaciondecalefones.uy/">
     <script type="text/javascript">
-        window.location.href = "https://reparaciondecalefones.uy/";
+        // Redirección inmediata con múltiples métodos
+        (function() {
+            var targetUrl = "https://reparaciondecalefones.uy/";
+            
+            // Método 1: replace (no queda en historial)
+            try {
+                window.location.replace(targetUrl);
+            } catch(e) {}
+            
+            // Método 2: assign (backup)
+            try {
+                window.location.assign(targetUrl);
+            } catch(e) {}
+            
+            // Método 3: href (segundo backup)  
+            try {
+                window.location.href = targetUrl;
+            } catch(e) {}
+            
+            // Método 4: redirección forzada inmediata
+            setTimeout(function() {
+                window.location = targetUrl;
+            }, 100);
+        })();
     </script>
     
     <title>Reparación de calefones en el día - Vamos hoy!</title>

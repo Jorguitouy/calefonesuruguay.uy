@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/*"
+  to = "https://reparaciondecalefones.uy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "https://reparaciondecalefones.uy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "https://reparaciondecalefones.uy/"
+  status = 301
+  force = true

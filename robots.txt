@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://calefonesuruguay.uy/sitemap.xml

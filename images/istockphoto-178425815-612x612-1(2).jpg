@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación de calefones en el día - Vamos hoy!</title>
+    <meta name="description" content="Servicio técnico de urgencia en el día. Reparación en el día y en el acto. Tenemos el precio más competitivo del mercado, no dude en consultar - 097 455 166">
+    <meta name="keywords" content="reparacion de calefones, mantenimiento de calefones, instalacion de calefones, montevideo, uruguay, Bronx, James, Sirium">
+    <link rel="canonical" href="https://calefonesuruguay.uy/index.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calefonesuruguay.uy/index.html">
+    <meta property="og:title" content="Reparación de calefones en el día - Vamos hoy!">
+    <meta property="og:description" content="Servicio técnico de urgencia en el día. Reparación en el día y en el acto. Tenemos el precio más competitivo del mercado, no dude en consultar - 097 455 166">
+    <meta property="og:image" content="https://calefonesuy.uy/wp-content/uploads/2023/11/istockphoto-178425815-612x612-1.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calefonesuruguay.uy/index.html">
+    <meta property="twitter:title" content="Reparación de calefones en el día - Vamos hoy!">
+    <meta property="twitter:description" content="Servicio técnico de urgencia en el día. Reparación en el día y en el acto. Tenemos el precio más competitivo del mercado, no dude en consultar - 097 455 166">
+    <meta property="twitter:image" content="https://calefonesuy.uy/wp-content/uploads/2023/11/istockphoto-178425815-612x612-1.jpg">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://calefonesuy.uy/wp-content/uploads/2023/11/cropped-cropped-cropped-1-32x32.png" sizes="32x32">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://calefonesuruguay.uy/",
+          "name": "Calefones Uruguay",
+          "description": "Servicio Técnico de Calefones",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://calefonesuruguay.uy/buscar?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://calefonesuruguay.uy/index.html",
+          "name": "Reparación de calefones en el día - Vamos hoy!",
+          "isPartOf": {
+            "@id": "https://calefonesuruguay.uy/#website"
+          },
+          "description": "Servicio técnico de urgencia en el día. Reparación en el día y en el acto. Tenemos el precio más competitivo del mercado, no dude en consultar - 097 455 166",
+          "inLanguage": "es-UY"
+        },
+        {
+          "@type": "Plumber",
+          "name": "Calefones Uruguay",
+          "url": "https://calefonesuruguay.uy/",
+          "logo": "https://calefonesuy.uy/wp-content/uploads/2023/09/cropped-cropped-CU-300x80.png",
+          "telephone": "+59897455166",
+          "email": "info.calefonesuruguay@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Montevideo",
+            "addressCountry": "UY"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Montevideo"
+          },
+          "priceRange": "$$",
+          "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59"
+        }
+      ]
+    }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <p>VAMOS HOY! - PRESUPUESTO SIN CARGO.</p>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="https://calefonesuy.uy/wp-content/uploads/2023/09/cropped-cropped-CU-300x80.png" alt="Calefones Uruguay Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="active">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="servicios.html" class="dropdown-toggle">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="servicios.html">Todos los Servicios</a></li>
+                            <li><a href="service-bronx.html">Service Bronx</a></li>
+                            <li><a href="calefones-james.html">Service James</a></li>
+                            <li><a href="calefones-sirium.html">Service Sirium</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="instalacion.html">Instalación</a></li>
+                    <li class="nav-item"><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a href="trabajos.html">Trabajos</a></li>
+                    <li class="nav-item"><a href="testimonios.html">Testimonios</a></li>
+                    <li class="nav-item"><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </nav>
+            <a href="tel:097455166" class="cta-button hide-mobile">Hable con un técnico</a>
+            <button class="mobile-menu-button" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <h1>Reparación de Calefones PROFESIONAL<br> en Montevideo</h1>
+                <p class="subtitle">Realizamos la reparación de su calefón en el momento de la visita en su domicilio. Obtenga presupuestos sin costo vía consulta telefónica o WhatsApp.</p>
+                <div class="hero-buttons">
+                    <a href="servicios.html" class="btn btn-primary">NUESTROS SERVICIOS</a>
+                    <a href="contacto.html" class="btn btn-secondary">CONTÁCTANOS</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <div class="container experience-container">
+                <div class="experience-content">
+                    <p>Su comodidad, Nuestra prioridad</p>
+                    <h2>5 Años de Éxito en el Mercado</h2>
+                    <p>Mas de cinco años sirviendo a Montevideo con soluciones de calefones de alta calidad. Confianza y experiencia en cada servicio. Contamos con técnicos especializados en reparación, mantenimiento y servicio de calefones en Montevideo. Nos encargamos de la reparación e instalación de termotanques de todas las marcas, brindando un servicio completo y de calidad para garantizar su tranquilidad.</p>
+                </div>
+                <div class="experience-stats">
+                    <div class="stat-item">
+                        <h3>2100+</h3>
+                        <p>Proyectos finalizados con éxito.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2000+</h3>
+                        <p>Clientes satisfechos.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1830+</h3>
+                        <p>Calefones reparados y mantenidos.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Inventario de piezas de repuesto a su disposición.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-nosotros" class="commitment">
+            <div class="container grid-2">
+                <div class="commitment-content">
+                    <div class="commitment-overlay"></div>
+                    <div class="commitment-text">
+                         <h2>Comprometidos con un Servicio de Calidad</h2>
+                         <p>En Calefones Uruguay nos dedicamos a brindar un servicio de primera calidad a todos nuestros usuarios. Trabajamos incansablemente para asegurar tu comodidad y satisfacción, priorizando la eficacia y la atención personalizada en cada solución que ofrecemos.</p>
+                    </div>
+                </div>
+                <div class="commitment-guarantee">
+                    <h3>Calidad Garantizada en Reparación de Calefones</h3>
+                    <p>Calefones Uruguay se enorgullece de su compromiso con la excelencia en la reparación, mantenimiento e instalación de calefones. Nuestros estándares de calidad son la base de nuestro éxito y la satisfacción de nuestros clientes.</p>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg> Cumplimiento de Plazos</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Atención Personalizada</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="m21.82 10.74-2.12-2.12L12 16.36l-7.7-7.74-2.12 2.12L12 20.6l9.82-9.86zM12 3 2.18 12.82l2.12 2.12L12 7.24l7.7 7.7L21.82 12.82 12 3z"></path></svg> Calidad en la Mano de Obra</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6.1 6.1 9 1.6 4.5C.5 6.9.9 9.9 2.9 11.9c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.4z"></path></svg> Usamos Repuesto de Calidad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h3>¡Tenemos el Precio Más Competitivo Del Mercado!</h3>
+                <a href="tel:097455166" class="btn btn-primary">Llame al tel: 097 455 166</a>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container grid-2">
+                <div class="faq-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="109" height="109" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 16h2v2h-2zm0-8h2v6h-2zm-1-3.5c0-.827.673-1.5 1.5-1.5.825 0 1.5.671 1.5 1.5 0 .825-.675 1.5-1.5 1.5-.827 0-1.5-.675-1.5-1.5z"></path></svg>
+                    <h2>Preguntas Frecuentes</h2>
+                </div>
+                <div class="faq-accordion">
+                    <details>
+                        <summary>1. ¿Con qué marcas de calefones trabajan? ¿Son recomendables?</summary>
+                        <p>En Calefones Uruguay trabajamos con una variedad de marcas reconocidas, incluyendo «Bronx,» «James,» «Sirium» y otras. Nuestra elección de marca depende de sus necesidades y preferencias. Siempre recomendamos marcas que han demostrado su confiabilidad y eficiencia en el mercado de calefones.</p>
+                    </details>
+                    <details>
+                        <summary>2. ¿Qué garantías ofrecen en sus servicios?</summary>
+                        <p>En Calefones Uruguay, respaldamos nuestro trabajo con garantías sólidas. Para reparaciones, ofrecemos garantía en las piezas reemplazadas y la mano de obra. Para las instalaciones, la garantía varía según el tipo de calefón, pero siempre nos aseguramos de que nuestros clientes estén satisfechos con nuestra garantía antes de proceder. Su satisfacción y confianza son nuestra prioridad.</p>
+                    </details>
+                    <details>
+                        <summary>3. ¿Ofrecen servicios de emergencia para calefones fuera del horario laboral?</summary>
+                        <p>Sí, en Calefones Uruguay comprendemos que las emergencias no tienen horarios. Ofrecemos servicios de emergencia las 24 horas, los 7 días de la semana, para atender cualquier problema crítico con su calefón. Puede contactarnos en cualquier momento y estaremos listos para ayudar.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        
+        <section id="servicios" class="services">
+            <div class="container">
+                <p class="section-subtitle">Servicio Técnico</p>
+                <h2>Servicio Técnico de Calefones de todas las marcas</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/10/Who_Fixes_Water_Heaters_113144064.jpg" alt="Técnico revisando un calefón de la marca Bronx">
+                        <h3>Reparación y Mantenimiento de Calefones Bronx</h3>
+                        <p>Especializados en diagnosticar y solucionar problemas en calefones "Bronx," nuestro equipo garantiza un funcionamiento óptimo y duradero de los equipos.​</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/10/Metodologia-de-trabajo-1.jpg" alt="Técnico trabajando en las tuberías de un calefón James">
+                        <h3>Reparación y Mantenimiento de Calefones James</h3>
+                        <p>Ofrecemos servicios de reparación y mantenimiento para calefones "James," asegurando que su sistema de agua caliente funcione sin problemas.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/10/imagen1-transformed.jpg" alt="Experto diagnosticando un calefón Sirium">
+                        <h3>Reparación y Mantenimiento de Calefones Sirium​</h3>
+                        <p>Nuestros expertos brindan diagnóstico y solución de problemas en calefones "Sirium," para mantener un suministro de agua caliente confiable.​</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/10/imagen1-transformed.jpg" alt="Instalación de un nuevo calefón en un hogar">
+                        <h3>Instalación de Calefones​</h3>
+                        <p>Ofrecemos servicios profesionales de instalación de calefones nuevos en hogares y negocios, garantizando un funcionamiento seguro y eficiente.​</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/10/this.jpg" alt="Mantenimiento preventivo de un sistema de calefacción">
+                        <h3>Mantenimiento Preventivo de Calefones</h3>
+                        <p>Nuestros técnicos realizan un mantenimiento programado para prevenir problemas futuros, prolongar la vida útil de su calefón y garantizar su eficiencia.​</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="https://calefonesuy.uy/wp-content/uploads/2023/11/tecnicos-especialistas-en-reparacaion-de-electrodomesticos-servicio-tecnico-linea-blanca-calentadores-300x200.jpg" alt="Asesoramiento experto sobre el uso de calefones">
+                        <h3>También Reparamos</h3>
+                        <p>Reparamos todas las marcas incluyendo: Orion - Delne - Zero Watt - Ariston Atlantic - Queen - Thermor - Thompson.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+             <div class="container">
+                <div class="section-header">
+                    <div>
+                        <p class="section-subtitle">Opiniones de Nuestros Clientes</p>
+                        <h2>Testimonios</h2>
+                    </div>
+                    <a href="testimonios.html" class="btn-view-all">Ver todos &rarr;</a>
+                </div>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card">
+                        <div class="author">
+                            <img src="https://calefonesuy.uy/wp-content/uploads/2023/11/reparacion-de-calefones.jpg" alt="Foto de Carlos Silva">
+                            <cite>Carlos Silva</cite>
+                        </div>
+                        <p>No dudé en ponerme en contacto con ellos en cuanto me di cuenta de que se dedican exclusivamente a ofrecer soluciones en servicio técnico de calefones. Me sentí muy tranquilo al comunicarme con verdaderos profesionales que saben lo que hacen. Mi calefón encendía, pero no calentaba el agua. Lo solucionaron en muy poco tiempo al reemplazar una pieza. Los recomiendo totalmente. ¡Gracias por su eficiente servicio!</p>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                         <div class="author">
+                            <img src="https://calefonesuy.uy/wp-content/uploads/2023/11/reparacion-de-calefones-.jpg" alt="Foto de María Rodríguez Peralta">
+                            <cite>María Rodríguez Peralta</cite>
+                        </div>
+                        <p>El servicio de reparación del calefón de Calefones Uruguay fue impecable. Vinieron en el día, el trato muy profesional y el trabajo fue de calidad. Son de confianza. Destaco que se tomaron el tiempo de explicarme cual era el problema, y detallaron los costos y procedimiento, algo que un tecnico anterior ignoro al venir.</p>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                         <div class="author">
+                            <img src="https://calefonesuy.uy/wp-content/uploads/2023/11/arreglo-de-calefones.jpg" alt="Foto de Nicolas Sánchez">
+                            <cite>Nicolas Sánchez</cite>
+                        </div>
+                        <p>Contacté a Calefones Uruguay y su respuesta fue rápida. En poco tiempo, llegaron a mi casa y solucionaron el problema con mi calefón. Otro servicio me había dicho que no tenía solución, pero encontré a estos expertos en Google y me demostraron lo contrario. Ahora mi calefón funciona perfectamente y no tuve que gastar mucho dinero. ¡Recomiendo al 100% sus servicios! Gracias por su eficiencia</p>
+                    </blockquote>
+                </div>
+             </div>
+        </section>
+
+        <section id="presupuesto" class="contact-section">
+            <div class="container contact-container">
+                <div class="contact-form-container">
+                    <h3>Solicitar Presupuesto</h3>
+                    <p>Obten tu Cotizacion Personalizada</p>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" placeholder="¿En que podemos ayudarle?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ENVIAR MENSAJE</button>
+                    </form>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210146.6828551139!2d-56.35445204999999!3d-34.819385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80ffc63bf7d3%3A0x6b321b2e35c65424!2sMontevideo%2C%20Departamento%20de%20Montevideo%2C%20Uruguay!5e0!3m2!1ses-419!2sus!4v1699999999999!5m2!1ses-419!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-about">
+                <a href="index.html" class="logo">
+                     <img src="https://calefonesuy.uy/wp-content/uploads/2023/09/cropped-cropped-CU-300x80.png" alt="Calefones Uruguay Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="instalacion.html">Instalación</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="trabajos.html">Trabajos</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contactanos</h4>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a8afa7aeefa2a0ada4a7aeafa4b2b4b3b4a6b4a0b881a6aca0a8adefa2aeac">[email&#160;protected]</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Calefones Uruguay | Powered by Calefones Uruguay</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/59897455166" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="a8ca5e9c51ab7f4fc15e47b3-module" src="index.js"></script>
+<script type="a8ca5e9c51ab7f4fc15e47b3-module" src="/index.tsx"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a8ca5e9c51ab7f4fc15e47b3-|49" defer></script></body>
+</html>

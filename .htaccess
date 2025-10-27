@@ -1,0 +1,6 @@
+# Redirección permanente para Apache/Nginx
+RewriteEngine On
+RewriteRule ^(.*)$ https://reparaciondecalefones.uy/$1 [R=301,L]
+
+# Alternate syntax for different servers
+Redirect 301 / https://reparaciondecalefones.uy/

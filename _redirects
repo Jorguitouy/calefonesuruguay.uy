@@ -1,2 +1,16 @@
 # Redirección permanente de todo el tráfico a reparaciondecalefones.uy
-/* https://reparaciondecalefones.uy/:splat    301
+
+# Redirección específica del index
+/ https://reparaciondecalefones.uy/ 301
+/index.html https://reparaciondecalefones.uy/ 301
+
+# Redirección de todas las páginas específicas
+/contacto.html https://reparaciondecalefones.uy/ 301
+/instalacion.html https://reparaciondecalefones.uy/ 301
+/service.html https://reparaciondecalefones.uy/ 301
+/sobre-nosotros.html https://reparaciondecalefones.uy/ 301
+/calefones-*.html https://reparaciondecalefones.uy/ 301
+/service-*.html https://reparaciondecalefones.uy/ 301
+
+# Redirección catch-all para cualquier otra URL
+/* https://reparaciondecalefones.uy/:splat 301

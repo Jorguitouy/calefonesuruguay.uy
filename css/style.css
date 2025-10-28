@@ -2208,17 +2208,17 @@ footer {
     display: flex;
     gap: calc(var(--spacing-unit) * 3);
     padding: calc(var(--spacing-unit) * 2) 0;
-    animation: scrollInfinite 90s linear infinite;
+    animation: scrollInfinite 100s linear infinite;
     width: fit-content;
-    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes scrollInfinite {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -2695,7 +2695,17 @@ footer {
 .coverage h2 {
     text-align: center;
     color: var(--color-primary);
-    margin-bottom: calc(var(--spacing-unit) * 6);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.coverage .section-description {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 auto calc(var(--spacing-unit) * 6);
+    max-width: 700px;
+    padding: 0 calc(var(--spacing-unit) * 2);
 }
 
 .coverage-grid {
@@ -2889,8 +2899,8 @@ footer {
 .zones-carousel {
     display: flex;
     gap: calc(var(--spacing-unit) * 2);
-    animation: scrollZones 80s linear infinite;
-    will-change: transform;
+    animation: scrollZones 100s linear infinite;
+    transform: translate3d(0, 0, 0);
 }
 
 .zones-carousel.no-animation {
@@ -2899,10 +2909,10 @@ footer {
 
 @keyframes scrollZones {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-33.33%);
+        transform: translate3d(-33.33%, 0, 0);
     }
 }
 
@@ -2983,10 +2993,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: calc(var(--spacing-unit) * 3);
-    margin-top: calc(var(--spacing-unit) * 6);
-    max-width: 800px;
+    margin-top: calc(var(--spacing-unit) * 10);
+    margin-bottom: calc(var(--spacing-unit) * 6);
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 calc(var(--spacing-unit) * 2);
 }
 
 .zone-stat {
@@ -3031,9 +3043,11 @@ footer {
 
 .coverage-cta {
     text-align: center;
-    margin-top: calc(var(--spacing-unit) * 5);
+    margin-top: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 4);
     font-size: 1.1rem;
     color: var(--color-text-light);
+    padding: 0 calc(var(--spacing-unit) * 2);
 }
 
 .inline-whatsapp-link {

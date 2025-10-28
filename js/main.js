@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBrandsCarousel();
     initStatsCounter();
     initEmailProtection();
+    initCarouselScrollControl();
 });
 
 // Protección de email contra scrapers
@@ -1047,3 +1048,44 @@ function initStatsCounter() {
     stats.forEach(stat => observer.observe(stat));
     statsSmall.forEach(stat => observer.observe(stat));
 }
+
+// Pausar carruseles durante scroll activo para evitar aceleración
+function initCarouselScrollControl() {
+    const brandsCarousel = document.querySelector('.brands-carousel');
+    const zonesCarousel = document.querySelector('.zones-carousel');
+    let scrollTimeout;
+    
+    if (!brandsCarousel && !zonesCarousel) return;
+    
+    const pauseCarousels = () => {
+        if (brandsCarousel) {
+            brandsCarousel.style.animationPlayState = 'paused';
+        }
+        if (zonesCarousel) {
+            zonesCarousel.style.animationPlayState = 'paused';
+        }
+    };
+    
+    const resumeCarousels = () => {
+        if (brandsCarousel) {
+            brandsCarousel.style.animationPlayState = 'running';
+        }
+        if (zonesCarousel) {
+            zonesCarousel.style.animationPlayState = 'running';
+        }
+    };
+    
+    // Detectar scroll y pausar temporalmente
+    window.addEventListener('scroll', () => {
+        pauseCarousels();
+        
+        // Limpiar timeout anterior
+        clearTimeout(scrollTimeout);
+        
+        // Reanudar después de que el scroll se detenga
+        scrollTimeout = setTimeout(() => {
+            resumeCarousels();
+        }, 150);
+    }, { passive: true });
+}
+

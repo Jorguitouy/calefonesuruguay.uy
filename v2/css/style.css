@@ -1426,6 +1426,7 @@ footer {
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
     padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 4);
 }
@@ -1451,6 +1452,8 @@ footer {
 .hero-whatsapp-btn .btn-text {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .btn-secondary {

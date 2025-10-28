@@ -1,0 +1,312 @@
+/* ============================================
+   OPTIMIZACIONES CRÍTICAS DE RENDIMIENTO
+   ============================================ */
+
+/* 1. Critical CSS - Cargar primero */
+/* Estos estilos se deben inline en el <head> para evitar FOUC */
+
+/* Reset mínimo */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    color: #212121;
+    background: #fafafa;
+}
+
+/* Top bar y header - Above the fold */
+.top-bar {
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.main-header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Hero section - Above the fold */
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #1a237e 0%, #304ffe 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 64px 0;
+}
+
+/* ============================================
+   2. WILL-CHANGE para animaciones suaves
+   ============================================ */
+
+.btn,
+.service-card,
+.stat-item,
+.testimonial-card,
+.whatsapp-float,
+.modal-content {
+    will-change: transform;
+}
+
+/* Remover will-change después de la animación */
+.btn:hover,
+.service-card:hover,
+.stat-item:hover {
+    will-change: auto;
+}
+
+/* ============================================
+   3. CONTENIDO PLACEHOLDER (Skeleton Screens)
+   ============================================ */
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.skeleton-title {
+    height: 32px;
+    width: 70%;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+
+.skeleton-card {
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* ============================================
+   4. LAZY LOADING PLACEHOLDERS
+   ============================================ */
+
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
+/* ============================================
+   5. CONTENIDO ABOVE THE FOLD OPTIMIZADO
+   ============================================ */
+
+/* Priorizar renderizado del contenido visible */
+.hero .container {
+    contain: layout style paint;
+}
+
+/* Usar contain para mejorar el rendering */
+.service-card,
+.stat-item,
+.testimonial-card {
+    contain: layout style paint;
+}
+
+/* ============================================
+   6. OPTIMIZACIONES DE SCROLL
+   ============================================ */
+
+/* Smooth scrolling con fallback */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimizar scroll en iOS */
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevenir reflow durante scroll */
+.main-header {
+    contain: layout;
+}
+
+/* ============================================
+   7. REDUCIR REPAINTS
+   ============================================ */
+
+/* Usar transform en lugar de top/left */
+.whatsapp-float {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+/* Promover a su propia capa de composición */
+.modal-content,
+.main-nav {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+/* ============================================
+   8. FONT LOADING OPTIMIZADO
+   ============================================ */
+
+/* Fallback durante carga de fuentes */
+body {
+    font-display: swap;
+}
+
+/* Prevenir CLS (Cumulative Layout Shift) */
+.fonts-loading body {
+    visibility: hidden;
+}
+
+.fonts-loaded body {
+    visibility: visible;
+}
+
+/* ============================================
+   9. IMÁGENES RESPONSIVE (Preparado)
+   ============================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Aspect ratio boxes para prevenir CLS */
+.aspect-ratio-box {
+    position: relative;
+    width: 100%;
+}
+
+.aspect-ratio-box::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 ratio */
+}
+
+.aspect-ratio-box > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   10. PREFETCH Y PRECONNECT
+   ============================================ */
+
+/* Agregar en HTML:
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="css/style.css" as="style">
+*/
+
+/* ============================================
+   11. INTERSECTION OBSERVER OPTIMIZADO
+   ============================================ */
+
+/* Elementos observados comienzan ocultos */
+.observe-visibility {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.observe-visibility.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   12. PERFORMANCE BUDGETS
+   ============================================ */
+
+/*
+PRESUPUESTOS RECOMENDADOS:
+- CSS Total: < 30KB (gzipped)
+- JavaScript Total: < 50KB (gzipped)
+- Total Page Weight: < 200KB (inicial)
+- Time to Interactive: < 3s (3G)
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
+*/
+
+/* ============================================
+   13. TOUCH ACTION OPTIMIZATION
+   ============================================ */
+
+/* Mejorar respuesta táctil */
+button,
+a,
+.clickable {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+}
+
+/* ============================================
+   14. GPU ACCELERATION
+   ============================================ */
+
+/* Forzar aceleración por GPU en animaciones críticas */
+.animate-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* ============================================
+   15. CRITICAL RENDERING PATH
+   ============================================ */
+
+/* Ocultar contenido no crítico inicialmente */
+.below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+/* ============================================
+   NOTAS DE IMPLEMENTACIÓN
+   ============================================ */
+
+/*
+1. Inline Critical CSS en <head>
+2. Defer non-critical CSS
+3. Usar font-display: swap
+4. Implementar lazy loading para imágenes
+5. Minimizar y comprimir assets
+6. Usar HTTP/2 o HTTP/3
+7. Implementar Service Worker para caching
+8. Usar CDN para assets estáticos
+9. Comprimir con Gzip/Brotli
+10. Auditar con Lighthouse regularmente
+*/

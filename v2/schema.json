@@ -1,0 +1,49 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "url": "https://calefonesuruguay.uy/",
+            "name": "Reparación de Calefones Montevideo",
+            "description": "Servicio técnico de calefones a domicilio en Montevideo. Reparación y service de calefones todas las marcas.",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://calefonesuruguay.uy/buscar?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "LocalBusiness",
+            "@id": "https://calefonesuruguay.uy/#organization",
+            "name": "Calefones Uruguay",
+            "image": "https://calefonesuruguay.uy/logo.png",
+            "description": "Reparación de calefones en Montevideo. Técnicos especializados a domicilio las 24hs. Service y arreglo de calefones todas las marcas.",
+            "priceRange": "$$",
+            "areaServed": {
+                "@type": "City",
+                "name": "Montevideo",
+                "addressCountry": "UY"
+            },
+            "openingHours": "Mo-Su 00:00-23:59",
+            "serviceType": [
+                "Reparación de calefones",
+                "Técnico de calefones a domicilio",
+                "Arreglo de calefones",
+                "Service de calefones"
+            ]
+        },
+        {
+            "@type": "Service",
+            "name": "Reparación de Calefones Montevideo",
+            "provider": {
+                "@id": "https://calefonesuruguay.uy/#organization"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Montevideo"
+            },
+            "description": "Servicio profesional de reparación y mantenimiento de calefones a domicilio en Montevideo. Atención las 24 horas.",
+            "category": "Plumbing Service"
+        }
+    ]
+}

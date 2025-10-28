@@ -391,17 +391,23 @@ function initZones() {
 
 // Inicialización de FAQ
 function initFAQ() {
-    const faqGrid = document.querySelector('.faq-grid');
-    if (!faqGrid) return;
+    const faqAccordion = document.querySelector('.faq-accordion');
+    if (!faqAccordion) return;
 
-    config.faq.forEach(({q, a}) => {
-        const article = document.createElement('article');
-        article.className = 'faq-item';
-        article.innerHTML = `
-            <h3>${q}</h3>
-            <p>${a}</p>
-        `;
-        faqGrid.appendChild(article);
+    // Manejar comportamiento de accordion: cerrar otros al abrir uno
+    const allDetails = faqAccordion.querySelectorAll('details');
+    
+    allDetails.forEach(detail => {
+        detail.addEventListener('toggle', function() {
+            if (this.open) {
+                // Cerrar todos los demás details
+                allDetails.forEach(otherDetail => {
+                    if (otherDetail !== this && otherDetail.open) {
+                        otherDetail.open = false;
+                    }
+                });
+            }
+        });
     });
 }
 

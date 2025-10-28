@@ -1,6 +1,6 @@
 // Configuración y Utilidades
 const config = {
-    phoneNumber: btoa('598XXXXXXXX'), // Número codificado en base64
+    phoneNumber: btoa('59896758200'), // Número codificado en base64 (+598 96758200)
     whatsappMsg: encodeURIComponent('Hola, necesito servicio técnico para mi calefón'),
     zones: {
         centro: ['Centro', 'Cordón', 'Tres Cruces', 'La Comercial', 'Villa Muñoz'],

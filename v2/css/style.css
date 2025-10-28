@@ -3237,6 +3237,7 @@ footer {
     align-items: center;
     gap: calc(var(--spacing-unit) * 1.5);
     color: white;
+    text-align: center;
 }
 
 .footer-icon {
@@ -3589,7 +3590,9 @@ footer {
     
     .footer-title {
         font-size: 1.5rem;
-        justify-content: center;
+        justify-content: center !important;
+        text-align: center;
+        width: 100%;
     }
     
     .footer-icon {

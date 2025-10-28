@@ -1063,10 +1063,16 @@ footer {
     
     .logo-section {
         flex: 1;
+        align-items: flex-start;
+    }
+    
+    .logo {
+        justify-content: flex-start;
     }
     
     .logo-text {
         font-size: 1.3rem;
+        text-align: left;
     }
     
     .logo-icon {

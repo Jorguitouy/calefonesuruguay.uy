@@ -1505,6 +1505,7 @@ footer {
     background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .experience-bg-pattern {
@@ -1524,7 +1525,7 @@ footer {
     margin: 0 auto;
     padding: 0 calc(var(--spacing-unit) * 2);
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .experience-content {

@@ -182,6 +182,20 @@ function initContactModal() {
             document.body.style.overflow = '';
         }
     });
+    
+    // Botón CTA del footer
+    const footerCTA = document.querySelector('.footer-cta');
+    if (footerCTA) {
+        footerCTA.addEventListener('click', () => {
+            if (isHuman.status) {
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                showContactInfo(contactOptions);
+            } else {
+                validateHuman();
+            }
+        });
+    }
 
     // Manejo del formulario de contacto
     const contactForm = document.getElementById('contactForm');

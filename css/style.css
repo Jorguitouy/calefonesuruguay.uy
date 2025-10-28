@@ -3640,12 +3640,15 @@ footer {
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: calc(var(--spacing-unit) * 2);
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center !important;
     gap: calc(var(--spacing-unit) * 1.5);
     color: white;
     text-align: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-icon {

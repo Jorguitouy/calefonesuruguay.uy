@@ -902,6 +902,20 @@ footer {
     box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+}
+
+/* WhatsApp Button Style */
+.whatsapp-btn {
+    background: linear-gradient(135deg, 
+        #25D366 0%, 
+        #128C7E 100%
+    ) !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+}
+
+.whatsapp-btn:hover {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6) !important;
 }
 
 .contact-trigger-btn::before {

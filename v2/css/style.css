@@ -1553,7 +1553,8 @@ footer {
     letter-spacing: 2px;
     margin-bottom: calc(var(--spacing-unit) * 2);
     position: relative;
-    display: inline-block;
+    display: block;
+    text-align: center;
 }
 
 .section-subtitle::after {

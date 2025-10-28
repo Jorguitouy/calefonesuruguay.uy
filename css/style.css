@@ -3162,7 +3162,7 @@ footer {
 }
 
 .faq-section .container {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 calc(var(--spacing-unit) * 2);
 }
@@ -3175,6 +3175,20 @@ footer {
 .faq-content h2 {
     color: var(--color-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.faq-accordion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+/* Desktop: 2 columnas de 5 preguntas */
+@media (min-width: 769px) {
+    .faq-accordion {
+        grid-template-columns: repeat(2, 1fr);
+        gap: calc(var(--spacing-unit) * 3);
+    }
 }
 
 .faq-accordion details {

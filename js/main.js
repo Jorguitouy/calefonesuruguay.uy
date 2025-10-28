@@ -1049,43 +1049,52 @@ function initStatsCounter() {
     statsSmall.forEach(stat => observer.observe(stat));
 }
 
-// Pausar carruseles durante scroll activo para evitar aceleración
+// Pausar carruseles durante scroll activo y pausar animaciones hijas
 function initCarouselScrollControl() {
     const brandsCarousel = document.querySelector('.brands-carousel');
+    const brandsWrapper = document.querySelector('.brands-carousel-wrapper');
     const zonesCarousel = document.querySelector('.zones-carousel');
+    const zonesWrapper = document.querySelector('.zones-carousel-wrapper');
     let scrollTimeout;
-    
+
     if (!brandsCarousel && !zonesCarousel) return;
-    
+
+    const addNoAnim = (el) => { if (el) el.classList.add('no-animation'); };
+    const removeNoAnim = (el) => { if (el) el.classList.remove('no-animation'); };
+
     const pauseCarousels = () => {
-        if (brandsCarousel) {
-            brandsCarousel.style.animationPlayState = 'paused';
-        }
-        if (zonesCarousel) {
-            zonesCarousel.style.animationPlayState = 'paused';
-        }
+        [brandsCarousel, brandsWrapper, zonesCarousel, zonesWrapper].forEach(addNoAnim);
     };
-    
+
     const resumeCarousels = () => {
-        if (brandsCarousel) {
-            brandsCarousel.style.animationPlayState = 'running';
-        }
-        if (zonesCarousel) {
-            zonesCarousel.style.animationPlayState = 'running';
-        }
+        [brandsCarousel, brandsWrapper, zonesCarousel, zonesWrapper].forEach(removeNoAnim);
     };
-    
-    // Detectar scroll y pausar temporalmente
-    window.addEventListener('scroll', () => {
-        pauseCarousels();
-        
-        // Limpiar timeout anterior
+
+    const scheduleResume = () => {
         clearTimeout(scrollTimeout);
-        
-        // Reanudar después de que el scroll se detenga
         scrollTimeout = setTimeout(() => {
             resumeCarousels();
-        }, 150);
+        }, 220);
+    };
+
+    // Scroll / wheel / touch interactions
+    window.addEventListener('scroll', () => {
+        pauseCarousels();
+        scheduleResume();
+    }, { passive: true });
+
+    window.addEventListener('wheel', () => {
+        pauseCarousels();
+        scheduleResume();
+    }, { passive: true });
+
+    window.addEventListener('touchstart', () => {
+        pauseCarousels();
+    }, { passive: true });
+
+    window.addEventListener('touchmove', () => {
+        pauseCarousels();
+        scheduleResume();
     }, { passive: true });
 }
 

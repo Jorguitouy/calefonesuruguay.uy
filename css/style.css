@@ -2111,6 +2111,74 @@ footer {
 .service-card .btn {
     position: relative;
     z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 1);
+    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    overflow: hidden;
+}
+
+.service-card .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card .btn:hover::before {
+    left: 100%;
+}
+
+.service-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.service-card .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.service-card .btn .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.service-card .btn svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.service-card:hover .btn {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }
 
 /* Brands Section */
@@ -3228,18 +3296,23 @@ footer {
 .testimonial-card,
 .brand,
 .info-card {
-    will-change: transform;
+    /* Evitamos will-change por defecto: puede sobrepromocionar a GPU y causar
+       comportamientos extraños durante el scroll. Conservamos backface y
+       perspective para mantener la calidad de render en transformaciones 3D. */
     backface-visibility: hidden;
     perspective: 1000px;
 }
 
-.service-card:hover,
-.stat-item:hover,
-.testimonial-card:hover,
-.brand:hover,
-.info-card:hover {
-    will-change: auto;
+/* Pausar todas las animaciones descendientes cuando el contenedor tenga
+   la clase .no-animation (usado durante scroll activo). */
+.no-animation,
+.no-animation * {
+    animation-play-state: paused !important;
+    transition: none !important;
+    will-change: auto !important;
 }
+
+
 
 /* Contact Section */
 .contact-section {

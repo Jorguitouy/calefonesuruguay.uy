@@ -603,7 +603,7 @@ footer {
     position: sticky;
     top: 0;
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .main-header.scrolled {
@@ -731,7 +731,7 @@ footer {
     font-weight: 600;
     font-size: 0.95rem;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -814,7 +814,7 @@ footer {
     opacity: 0;
     visibility: hidden;
     transform: translateX(-50%) translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 1000;
     list-style: none;
     margin: 0;
@@ -839,7 +839,7 @@ footer {
     color: var(--color-text);
     text-decoration: none;
     border-radius: 10px;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
     font-weight: 500;
     font-size: 0.95rem;
 }
@@ -906,7 +906,7 @@ footer {
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
     position: relative;
     overflow: hidden;
@@ -997,7 +997,7 @@ footer {
     cursor: pointer;
     padding: calc(var(--spacing-unit) * 1);
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .mobile-menu-button:hover {
@@ -1009,7 +1009,7 @@ footer {
     height: 3px;
     background: var(--color-primary);
     border-radius: 3px;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .mobile-menu-button.active .hamburger-line:nth-child(1) {
@@ -1106,7 +1106,7 @@ footer {
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         z-index: 998;
     }
     
@@ -1395,7 +1395,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal), color var(--transition-normal), background var(--transition-normal);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1643,7 +1643,7 @@ footer {
     font-size: 0.95rem;
     color: var(--color-primary);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .feature-tag:hover {
@@ -1678,7 +1678,7 @@ footer {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
@@ -1716,7 +1716,7 @@ footer {
     height: 0;
     background: radial-gradient(circle, rgba(22, 163, 74, 0.1), transparent);
     border-radius: 50%;
-    transition: all 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     pointer-events: none;
 }
 
@@ -1831,7 +1831,7 @@ footer {
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     border: 2px solid #e0f2fe;
     position: relative;
     overflow: hidden;
@@ -1933,7 +1933,7 @@ footer {
     margin-bottom: calc(var(--spacing-unit) * 2);
     background: var(--color-background);
     border-radius: var(--border-radius);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -2039,7 +2039,7 @@ footer {
     padding: calc(var(--spacing-unit) * 4);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-small);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
@@ -2091,7 +2091,7 @@ footer {
     font-size: 3rem;
     margin-bottom: calc(var(--spacing-unit) * 2);
     display: inline-block;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     filter: grayscale(0.2);
 }
 
@@ -2102,7 +2102,7 @@ footer {
 
 /* Desactivar animaciones en iconos cuando la tarjeta está visible (evitar vibración) */
 .service-card.visible .service-icon {
-    animation: none !important;
+    animation: none;
     transform: none;
 }
 
@@ -2144,7 +2144,7 @@ footer {
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     overflow: hidden;
     margin-top: auto;
@@ -2187,7 +2187,7 @@ footer {
 
 /* Desactivar pulse de iconos en botones cuando la tarjeta está visible (evitar vibración) */
 .service-card.visible .btn .btn-icon {
-    animation: none !important;
+    animation: none;
 }
 
 @keyframes pulse-icon {
@@ -2246,7 +2246,7 @@ footer {
     border-radius: calc(var(--border-radius) * 2);
     font-size: 1rem;
     font-family: inherit;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background: var(--color-surface);
 }
 
@@ -2366,7 +2366,7 @@ footer {
     padding: calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 4);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-small);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     min-width: 200px;
@@ -2401,7 +2401,7 @@ footer {
     color: var(--color-accent);
     opacity: 0;
     transform: translateX(-10px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .brand:hover::before {
@@ -2426,7 +2426,7 @@ footer {
     text-align: center;
     position: relative;
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .brand:hover .brand-name {
@@ -2465,7 +2465,7 @@ footer {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     box-shadow: var(--shadow-small);
 }
 
@@ -2523,7 +2523,7 @@ footer {
     border-radius: 50%;
     background: rgba(26, 35, 126, 0.2);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     border: none;
     padding: 0;
 }
@@ -2605,7 +2605,7 @@ footer {
     padding: calc(var(--spacing-unit) * 5);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-small);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     border-left: 4px solid transparent;
 }
@@ -2640,7 +2640,7 @@ footer {
     margin-bottom: calc(var(--spacing-unit) * 3);
     display: block;
     opacity: 0.8;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .testimonial-card:hover .testimonial-icon {
@@ -2676,7 +2676,7 @@ footer {
     color: var(--color-primary);
     position: relative;
     padding-left: calc(var(--spacing-unit) * 3);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .testimonial-card cite::before {
@@ -2705,7 +2705,7 @@ footer {
     box-shadow: var(--shadow-medium);
     border-left: 4px solid var(--color-accent);
     position: relative;
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .testimonial-card::before {
@@ -2816,7 +2816,7 @@ footer {
     box-shadow: var(--shadow-small);
     position: relative;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .zone-group::before {
@@ -2874,7 +2874,7 @@ footer {
     color: var(--color-text-light);
     position: relative;
     padding-left: calc(var(--spacing-unit) * 3);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .zone-list li::before {
@@ -2885,7 +2885,7 @@ footer {
     font-weight: bold;
     opacity: 0;
     transform: translateX(-5px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .zone-list li:hover {
@@ -2924,7 +2924,7 @@ footer {
     border: 2px solid #e0f2fe;
     border-radius: 50px;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     background: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -2947,7 +2947,7 @@ footer {
     width: 24px;
     height: 24px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
@@ -3019,7 +3019,7 @@ footer {
     padding: calc(var(--spacing-unit) * 3);
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid #e0f2fe;
     cursor: pointer;
     display: flex;
@@ -3103,7 +3103,7 @@ footer {
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border: 2px solid transparent;
 }
 
@@ -3149,7 +3149,7 @@ footer {
 .inline-whatsapp-link {
     color: var(--color-accent);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: calc(var(--spacing-unit) * 0.5);
@@ -3217,7 +3217,7 @@ footer {
     border-radius: var(--border-radius);
     margin-bottom: calc(var(--spacing-unit) * 2);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .faq-accordion details:hover {
@@ -3306,9 +3306,14 @@ footer {
 }
 
 /* Fast scroll - reducir animaciones */
+.fast-scroll {
+    animation-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+
 .fast-scroll * {
-    animation-duration: 0.1s !important;
-    transition-duration: 0.1s !important;
+    animation-duration: 0.1s;
+    transition-duration: 0.1s;
 }
 
 /* Shimmer effect para carga */
@@ -3349,9 +3354,9 @@ footer {
    la clase .no-animation (usado durante scroll activo). */
 .no-animation,
 .no-animation * {
-    animation-play-state: paused !important;
-    transition: none !important;
-    will-change: auto !important;
+    animation-play-state: paused;
+    transition: none;
+    will-change: auto;
 }
 
 
@@ -3402,7 +3407,7 @@ footer {
     border-radius: var(--border-radius);
     font-family: inherit;
     font-size: 1rem;
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal), color var(--transition-normal), background var(--transition-normal);
     background: var(--color-surface);
 }
 
@@ -3476,7 +3481,7 @@ footer {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-small);
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     overflow: hidden;
 }
@@ -3642,7 +3647,7 @@ footer {
     margin-bottom: calc(var(--spacing-unit) * 2);
     display: block;
     align-items: center;
-    justify-content: center !important;
+    justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
     color: white;
     text-align: center;
@@ -3687,7 +3692,7 @@ footer {
     border-radius: 20px;
     font-size: 0.85rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
 }
 
@@ -3743,7 +3748,7 @@ footer {
     align-items: center;
     gap: calc(var(--spacing-unit) * 1);
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     position: relative;
 }
 
@@ -3834,7 +3839,7 @@ footer {
     color: var(--color-accent);
     text-decoration: none;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-contact-list a:hover {
@@ -3863,7 +3868,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     position: relative;
     overflow: hidden;
@@ -4013,7 +4018,7 @@ footer {
     
     .footer-title {
         font-size: 1.5rem;
-        justify-content: center !important;
+        justify-content: center;
         text-align: center;
         width: 100%;
     }
@@ -4162,7 +4167,7 @@ footer {
     justify-content: center;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal), color var(--transition-normal), background var(--transition-normal);
     border: none;
     z-index: 998;
     animation: pulse 2s infinite;
@@ -4221,7 +4226,7 @@ footer {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .scroll-to-top.visible {
@@ -4410,7 +4415,7 @@ footer {
         margin-bottom: calc(var(--spacing-unit) * 1);
         background: var(--color-background);
         border-radius: var(--border-radius);
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
         position: relative;
         overflow: hidden;
     }

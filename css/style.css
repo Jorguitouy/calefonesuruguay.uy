@@ -2043,6 +2043,9 @@ footer {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
 }
 
 .service-card::before {
@@ -2097,6 +2100,16 @@ footer {
     filter: grayscale(0);
 }
 
+/* Desactivar animaciones en iconos cuando la tarjeta está visible (evitar vibración) */
+.service-card.visible .service-icon {
+    animation: none !important;
+    transform: none;
+}
+
+.service-card.visible:hover .service-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
 .service-card h3 {
     font-size: 1.3rem;
     color: var(--color-primary);
@@ -2112,6 +2125,7 @@ footer {
     color: var(--color-text-light);
     line-height: 1.6;
     margin-bottom: calc(var(--spacing-unit) * 3);
+    flex-grow: 1;
 }
 
 .service-card .btn {
@@ -2133,6 +2147,7 @@ footer {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     overflow: hidden;
+    margin-top: auto;
 }
 
 .service-card .btn::before {
@@ -2168,6 +2183,11 @@ footer {
     width: 24px;
     height: 24px;
     animation: pulse-icon var(--icon-pulse-duration, 2s) ease-in-out infinite;
+}
+
+/* Desactivar pulse de iconos en botones cuando la tarjeta está visible (evitar vibración) */
+.service-card.visible .btn .btn-icon {
+    animation: none !important;
 }
 
 @keyframes pulse-icon {

@@ -3698,6 +3698,12 @@ footer {
     
     .footer-title {
         font-size: 1.3rem;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .footer-icon {
+        display: inline-block;
     }
     
     .footer-cta {

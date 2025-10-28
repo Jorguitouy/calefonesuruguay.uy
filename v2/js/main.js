@@ -45,7 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallaxEffect();
     initBrandsCarousel();
     initStatsCounter();
+    initEmailProtection();
 });
+
+// Protección de email contra scrapers
+function initEmailProtection() {
+    const emailLinks = document.querySelectorAll('.email-link');
+    emailLinks.forEach(link => {
+        const user = link.getAttribute('data-user');
+        const domain = link.getAttribute('data-domain');
+        
+        if (user && domain) {
+            const email = user + '@' + domain;
+            link.textContent = email;
+            link.href = 'mailto:' + email;
+        }
+    });
+}
 
 // Mobile Menu
 // Mobile Menu Mejorado

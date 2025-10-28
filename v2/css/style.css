@@ -3389,11 +3389,11 @@ footer {
     margin: 0;
 }
 
-/* Footer CTA Button */
+/* Footer CTA Button - WhatsApp Style */
 .footer-cta {
     width: 100%;
     padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
-    background: linear-gradient(135deg, var(--color-accent) 0%, #e67e22 100%);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -3405,9 +3405,22 @@ footer {
     justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+}
+
+.footer-cta .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta .btn-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .footer-cta::before {
@@ -3429,12 +3442,12 @@ footer {
 }
 
 .footer-cta:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.5);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
 
 .footer-cta span {
-    font-size: 1.3rem;
     position: relative;
     z-index: 1;
 }

@@ -1078,114 +1078,47 @@ footer {
         padding-left: calc(var(--spacing-unit) * 3.5);
     }
     
-    /* ===================================
-       MENÚ MÓVIL MEJORADO
-       =================================== */
-    
     .main-nav {
         position: fixed;
-        top: 0;
+        top: calc(var(--spacing-unit) * 15);
         left: 0;
         right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, 
-            rgba(30, 58, 138, 0.98) 0%, 
-            rgba(22, 163, 74, 0.98) 100%
-        );
-        backdrop-filter: blur(20px);
+        background: white;
         flex-direction: column;
-        padding: calc(var(--spacing-unit) * 20) calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 4);
+        padding: calc(var(--spacing-unit) * 3);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        max-height: calc(100vh - var(--spacing-unit) * 15);
         overflow-y: auto;
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        z-index: 997;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 998;
     }
     
     .main-nav.active {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
         visibility: visible;
-    }
-    
-    /* Overlay oscuro detrás del menú */
-    .main-nav::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
     }
     
     .nav-menu {
         flex-direction: column;
         width: 100%;
-        gap: calc(var(--spacing-unit) * 1.5);
-        animation: slideInLeft 0.6s ease-out;
-    }
-    
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        gap: calc(var(--spacing-unit) * 1);
     }
     
     .nav-item {
         width: 100%;
-        animation: fadeInUp 0.5s ease-out backwards;
     }
-    
-    .nav-item:nth-child(1) { animation-delay: 0.1s; }
-    .nav-item:nth-child(2) { animation-delay: 0.15s; }
-    .nav-item:nth-child(3) { animation-delay: 0.2s; }
-    .nav-item:nth-child(4) { animation-delay: 0.25s; }
-    .nav-item:nth-child(5) { animation-delay: 0.3s; }
     
     .nav-link {
         width: 100%;
         justify-content: flex-start;
-        padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 3);
-        font-size: 1.1rem;
-        background: rgba(255, 255, 255, 0.15);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        color: white !important;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: calc(var(--spacing-unit) * 2);
+        font-size: 1rem;
     }
     
-    .nav-link:hover {
-        background: rgba(255, 255, 255, 0.25);
-        border-color: rgba(255, 255, 255, 0.4);
-        transform: translateX(10px);
-    }
-    
-    .nav-link.active {
-        background: rgba(255, 255, 255, 0.3);
-        border-color: white;
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-    }
-    
-    .nav-icon {
-        font-size: 1.5rem;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-    
-    .dropdown-arrow {
-        margin-left: auto;
-        font-size: 0.9rem;
-    }
-    
-    /* Dropdown Móvil */
     .dropdown-menu {
         position: static;
         transform: none;
@@ -1193,93 +1126,17 @@ footer {
         visibility: visible;
         box-shadow: none;
         border: none;
-        background: rgba(0, 0, 0, 0.2);
-        margin-top: calc(var(--spacing-unit) * 1.5);
-        border-radius: 12px;
+        background: rgba(30, 58, 138, 0.02);
+        margin-top: calc(var(--spacing-unit) * 1);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                    padding 0.4s ease,
-                    margin-top 0.4s ease;
-        padding: 0;
-        margin-top: 0;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 calc(var(--spacing-unit) * 2);
     }
     
     .dropdown.active .dropdown-menu {
-        max-height: 600px;
+        max-height: 500px;
         padding: calc(var(--spacing-unit) * 2);
-        margin-top: calc(var(--spacing-unit) * 1.5);
-    }
-    
-    .dropdown-menu li {
-        animation: fadeInUp 0.3s ease-out backwards;
-    }
-    
-    .dropdown-menu li:nth-child(1) { animation-delay: 0.05s; }
-    .dropdown-menu li:nth-child(2) { animation-delay: 0.1s; }
-    .dropdown-menu li:nth-child(3) { animation-delay: 0.15s; }
-    .dropdown-menu li:nth-child(4) { animation-delay: 0.2s; }
-    .dropdown-menu li:nth-child(5) { animation-delay: 0.25s; }
-    
-    .dropdown-menu a {
-        color: white !important;
-        padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        font-size: 0.95rem;
-    }
-    
-    .dropdown-menu a:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateX(8px);
-    }
-    
-    .menu-icon {
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-    
-    .dropdown-divider {
-        background: rgba(255, 255, 255, 0.2);
-        margin: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
-    }
-    
-    .dropdown-subtitle {
-        color: rgba(255, 255, 255, 0.8);
-        padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
-        font-weight: 700;
-    }
-    
-    /* Botón WhatsApp en menú móvil */
-    .mobile-menu-whatsapp {
-        display: flex !important;
-        margin-top: calc(var(--spacing-unit) * 3);
-        animation: fadeInUp 0.5s ease-out backwards;
-        animation-delay: 0.4s;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border: 2px solid rgba(37, 211, 102, 0.5);
-        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
-    }
-    
-    .mobile-menu-whatsapp .btn-icon {
-        background: linear-gradient(135deg, #25D366, #128C7E);
-        padding: calc(var(--spacing-unit) * 1.5);
-        border-radius: 12px;
-    }
-    
-    .mobile-menu-whatsapp .btn-title {
-        color: #1e3a8a;
-        font-weight: 700;
-    }
-    
-    .mobile-menu-whatsapp .btn-subtitle {
-        color: #16a34a;
-        font-weight: 600;
-    }
-    
-    .mobile-menu-whatsapp:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
-        border-color: #25D366;
     }
     
     .contact-trigger-btn {
@@ -1561,6 +1418,39 @@ footer {
 
 .btn-primary:active {
     transform: translateY(0);
+}
+
+/* Botón WhatsApp en Hero */
+.hero-whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 1.5);
+    padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 4);
+}
+
+.hero-whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5) !important;
+}
+
+.hero-whatsapp-btn .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-whatsapp-btn .btn-icon svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.hero-whatsapp-btn .btn-text {
+    position: relative;
+    z-index: 1;
 }
 
 .btn-secondary {

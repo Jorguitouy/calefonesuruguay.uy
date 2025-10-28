@@ -70,16 +70,6 @@ function initMobileMenu() {
                 body.style.overflow = '';
             });
         });
-        
-        // Cerrar menú al hacer clic en el botón de WhatsApp
-        const whatsappBtn = nav.querySelector('.mobile-menu-whatsapp');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', () => {
-                menuButton.classList.remove('active');
-                nav.classList.remove('active');
-                body.style.overflow = '';
-            });
-        }
 
         // Dropdowns móviles
         const dropdowns = document.querySelectorAll('.dropdown');

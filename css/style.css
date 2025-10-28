@@ -3642,6 +3642,7 @@ footer {
     margin-bottom: calc(var(--spacing-unit) * 2);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: calc(var(--spacing-unit) * 1.5);
     color: white;
     text-align: center;
@@ -3663,6 +3664,14 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: calc(var(--spacing-unit) * 1.5);
+}
+
+/* Center the about section content (icon + site name + description) */
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .badge {

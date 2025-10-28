@@ -3138,6 +3138,32 @@ footer {
     margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
+.cta-whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 1.5);
+    padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 4);
+    font-size: 1.1rem;
+}
+
+.cta-whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%) !important;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6) !important;
+}
+
+.cta-whatsapp-btn .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-whatsapp-btn .btn-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
 /* Footer */
 /* ===================================
    FOOTER

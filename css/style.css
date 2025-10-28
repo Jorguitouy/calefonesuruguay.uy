@@ -3674,6 +3674,11 @@ footer {
     text-align: center;
 }
 
+/* Ensure the about section is centered inside the grid column on wider screens */
+.footer-about {
+    justify-self: center;
+}
+
 .badge {
     background: rgba(255, 255, 255, 0.1);
     padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);

@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollToTop();
     initParallaxEffect();
     initBrandsCarousel();
+    initStatsCounter();
 });
 
 // Mobile Menu
@@ -841,4 +842,48 @@ function initBrandsCarousel() {
             isScrolling = false;
         });
     }
+}// Animación de contadores en la sección de experiencia
+function initStatsCounter() {
+    // Contadores grandes
+    const stats = document.querySelectorAll('.stat-number');
+    // Contadores pequeños
+    const statsSmall = document.querySelectorAll('.stat-number-small');
+    
+    const animateCounter = (element) => {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000; // 2 segundos
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    };
+    
+    // Observar cuando los contadores entran en viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted', 'counting');
+                animateCounter(entry.target);
+                const statItem = entry.target.closest('.stat-item, .stat-item-small');
+                if (statItem) {
+                    statItem.classList.add('visible');
+                }
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    stats.forEach(stat => observer.observe(stat));
+    statsSmall.forEach(stat => observer.observe(stat));
 }

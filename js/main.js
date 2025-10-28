@@ -46,7 +46,63 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatsCounter();
     initEmailProtection();
     initCarouselScrollControl();
+    initAdaptiveCarouselPerf();
 });
+
+// Detecta scroll/wheel frecuente y ajusta variables CSS para reducir movimiento y velocidad
+function initAdaptiveCarouselPerf() {
+    const root = document.documentElement;
+    let events = [];
+    const windowMs = 800; // ventana para medir frecuencia
+    const threshold = 6; // número de eventos en ventana que se consideran "rápido"
+    let adjusted = false;
+
+    const record = () => {
+        const now = Date.now();
+        events.push(now);
+        // eliminar eventos viejos
+        events = events.filter(t => now - t <= windowMs);
+
+        if (!adjusted && events.length >= threshold) {
+            adjusted = true;
+            // Aplicar ajustes: acelerar duración (hacer más lento) y reducir movimiento de iconos
+            root.style.setProperty('--carousel-duration-brands', '180s');
+            root.style.setProperty('--carousel-duration-zones', '180s');
+            root.style.setProperty('--icon-pulse-duration', '4s');
+            root.style.setProperty('--icon-pulse-scale', '1.02');
+            root.style.setProperty('--zone-icon-hover-scale', '1.05');
+            root.style.setProperty('--zone-pulse-duration', '3.5s');
+            // También añadir clase global para asegurar pause inmediata en descendientes al detectar scroll intenso
+            document.documentElement.classList.add('no-animation');
+            // Reanudar después de un breve periodo
+            setTimeout(() => {
+                document.documentElement.classList.remove('no-animation');
+            }, 250);
+        }
+    };
+
+    const scheduleReset = () => {
+        // después de inactividad, volver a valores por defecto
+        clearTimeout(initAdaptiveCarouselPerf._resetTimer);
+        initAdaptiveCarouselPerf._resetTimer = setTimeout(() => {
+            if (adjusted) {
+                adjusted = false;
+                root.style.setProperty('--carousel-duration-brands', '100s');
+                root.style.setProperty('--carousel-duration-zones', '100s');
+                root.style.setProperty('--icon-pulse-duration', '2s');
+                root.style.setProperty('--icon-pulse-scale', '1.1');
+                root.style.setProperty('--zone-icon-hover-scale', '1.2');
+                root.style.setProperty('--zone-pulse-duration', '1.5s');
+            }
+            events = [];
+        }, 1500);
+    };
+
+    // Escuchar eventos que indican scroll rápido o interacción con rueda/touch
+    window.addEventListener('wheel', () => { record(); scheduleReset(); }, { passive: true });
+    window.addEventListener('scroll', () => { record(); scheduleReset(); }, { passive: true });
+    window.addEventListener('touchmove', () => { record(); scheduleReset(); }, { passive: true });
+}
 
 // Protección de email contra scrapers
 function initEmailProtection() {

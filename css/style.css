@@ -15,6 +15,12 @@
     --shadow-small: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
     --shadow-large: 0 8px 16px rgba(0,0,0,0.2);
+    /* Carousel & icon adaptive variables */
+    --carousel-duration-brands: 100s;
+    --carousel-duration-zones: 100s;
+    --icon-pulse-duration: 2s;
+    --icon-pulse-scale: 1.1;
+    --zone-icon-hover-scale: 1.2;
 }
 
 /* Reset y Bases */
@@ -2161,7 +2167,7 @@ footer {
     justify-content: center;
     width: 24px;
     height: 24px;
-    animation: pulse-icon 2s ease-in-out infinite;
+    animation: pulse-icon var(--icon-pulse-duration, 2s) ease-in-out infinite;
 }
 
 @keyframes pulse-icon {
@@ -2169,7 +2175,7 @@ footer {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(var(--icon-pulse-scale, 1.1));
     }
 }
 
@@ -2276,9 +2282,10 @@ footer {
     display: flex;
     gap: calc(var(--spacing-unit) * 3);
     padding: calc(var(--spacing-unit) * 2) 0;
-    animation: scrollInfinite 100s linear infinite;
+    animation: scrollInfinite var(--carousel-duration-brands, 100s) linear infinite;
     width: fit-content;
     transform: translate3d(0, 0, 0);
+    will-change: transform;
 }
 
 @keyframes scrollInfinite {
@@ -2967,8 +2974,9 @@ footer {
 .zones-carousel {
     display: flex;
     gap: calc(var(--spacing-unit) * 2);
-    animation: scrollZones 100s linear infinite;
+    animation: scrollZones var(--carousel-duration-zones, 100s) linear infinite;
     transform: translate3d(0, 0, 0);
+    will-change: transform;
 }
 
 .zones-carousel.no-animation {
@@ -3030,13 +3038,13 @@ footer {
 }
 
 .zone-item:hover .zone-icon {
-    transform: scale(1.2) rotate(10deg);
+    transform: translate3d(0,0,0) scale(var(--zone-icon-hover-scale, 1.2)) rotate(10deg);
 }
 
 .zone-item.zone-highlight {
     background: linear-gradient(135deg, #fff 0%, #f0f9ff 100%);
     border-color: var(--color-primary);
-    animation: pulseZone 1.5s ease-in-out infinite;
+    animation: pulseZone var(--zone-pulse-duration, 1.5s) ease-in-out infinite;
 }
 
 @keyframes pulseZone {

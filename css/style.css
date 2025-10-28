@@ -1291,7 +1291,7 @@ footer {
     display: flex;
     align-items: center;
     padding: calc(var(--spacing-unit) * 8) 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero::before {
@@ -1321,7 +1321,7 @@ footer {
 
 .hero .container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
@@ -1528,7 +1528,7 @@ footer {
     margin: 0 auto;
     padding: 0 calc(var(--spacing-unit) * 2);
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .experience-content {
@@ -3867,11 +3867,16 @@ footer {
         z-index: 1 !important;
     }
     
+    /* Hero debe estar por encima de otras secciones */
+    .hero {
+        z-index: 2 !important;
+    }
+    
     section .container,
     .hero .container,
     .experience-container {
         position: relative;
-        z-index: 2 !important;
+        z-index: 3 !important;
     }
 
     .main-nav {

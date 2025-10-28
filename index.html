@@ -278,9 +278,9 @@
                         <a href="#contacto" class="btn btn-primary">Solicitar Servicio</a>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">⚡</div>
-                        <h3>Reparación de Pilotos y Quemadores</h3>
-                        <p>Limpieza, ajuste y reemplazo de pilotos y quemadores. Solución definitiva para calefones que no encienden o tienen llama irregular.</p>
+                        <div class="service-icon">🛠️</div>
+                        <h3>Instalación de Calefones</h3>
+                        <p>Instalación profesional de calefones a domicilio: montaje, conexión segura y puesta en marcha con pruebas de funcionamiento. Incluye asesoría sobre ubicación y garantía por escrito.</p>
                         <a href="#contacto" class="btn btn-primary">Solicitar Servicio</a>
                     </div>
                     <div class="service-card">
@@ -300,7 +300,17 @@
                 
                 <!-- Buscador de marcas -->
                 <div class="brand-search-container">
-                    <input type="text" id="brand-search" class="brand-search" placeholder="🔍 Buscar marca..." aria-label="Buscar marca">
+                    <input 
+                        type="text" 
+                        id="brand-search" 
+                        class="brand-search" 
+                        placeholder="🔍 Buscar marca..." 
+                        aria-label="Buscar marca"
+                        maxlength="15"
+                        pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*"
+                        autocomplete="off"
+                        spellcheck="false"
+                        title="Solo letras y espacios (máximo 15 caracteres)">
                     <span class="search-results-count"></span>
                 </div>
 
@@ -592,21 +602,168 @@
 
         <section class="coverage" id="zonas">
             <div class="coverage-content">
-                <h2>Zonas de Cobertura</h2>
-                <div class="coverage-grid">
-                    <div class="zone-group">
-                        <h3>Montevideo Centro</h3>
-                        <ul class="zone-list"></ul>
+                <h2>Zonas de Cobertura en Montevideo y Canelones</h2>
+                <p class="section-description">Brindamos servicio técnico especializado en todas estas zonas. <strong>Atención en el día</strong> para la mayoría de las ubicaciones.</p>
+                
+                <!-- Buscador de zonas mejorado -->
+                <div class="zone-search-container">
+                    <div class="search-wrapper">
+                        <input 
+                            type="text" 
+                            id="zone-search" 
+                            class="zone-search" 
+                            placeholder="🔍 Buscar tu zona (ej: Pocitos, Centro, Carrasco)..." 
+                            aria-label="Buscar zona"
+                            maxlength="20"
+                            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*"
+                            autocomplete="off"
+                            spellcheck="false"
+                            title="Solo letras y espacios (máximo 20 caracteres)">
+                        <button class="clear-search" id="clear-zone-search" aria-label="Limpiar búsqueda" style="display: none;">✕</button>
                     </div>
-                    <div class="zone-group">
-                        <h3>Zona Costera</h3>
-                        <ul class="zone-list"></ul>
-                    </div>
-                    <div class="zone-group">
-                        <h3>Zonas Periféricas</h3>
-                        <ul class="zone-list"></ul>
+                    <span class="zone-search-results-count"></span>
+                    <p class="search-hint">💡 <strong>Tip:</strong> Escribe el nombre de tu barrio para verificar cobertura</p>
+                </div>
+
+                <div class="zones-carousel-wrapper">
+                    <div class="zones-carousel">
+                        <div class="zone-item" data-zone="18 de mayo"><span class="zone-icon">📍</span><span class="zone-name">18 De Mayo</span></div>
+                        <div class="zone-item" data-zone="abayubá"><span class="zone-icon">📍</span><span class="zone-name">Abayubá</span></div>
+                        <div class="zone-item" data-zone="aguada"><span class="zone-icon">📍</span><span class="zone-name">Aguada</span></div>
+                        <div class="zone-item" data-zone="aires puros"><span class="zone-icon">📍</span><span class="zone-name">Aires Puros</span></div>
+                        <div class="zone-item" data-zone="arroyo seco"><span class="zone-icon">📍</span><span class="zone-name">Arroyo Seco</span></div>
+                        <div class="zone-item" data-zone="atahualpa"><span class="zone-icon">📍</span><span class="zone-name">Atahualpa</span></div>
+                        <div class="zone-item" data-zone="bañados de carrasco"><span class="zone-icon">📍</span><span class="zone-name">Bañados de Carrasco</span></div>
+                        <div class="zone-item" data-zone="barra de carrasco"><span class="zone-icon">📍</span><span class="zone-name">Barra de Carrasco</span></div>
+                        <div class="zone-item" data-zone="barrio sur"><span class="zone-icon">📍</span><span class="zone-name">Barrio Sur</span></div>
+                        <div class="zone-item" data-zone="barros blancos"><span class="zone-icon">📍</span><span class="zone-name">Barros Blancos</span></div>
+                        <div class="zone-item" data-zone="bella italia"><span class="zone-icon">📍</span><span class="zone-name">Bella Italia</span></div>
+                        <div class="zone-item" data-zone="bella vista"><span class="zone-icon">📍</span><span class="zone-name">Bella Vista</span></div>
+                        <div class="zone-item" data-zone="belvedere"><span class="zone-icon">📍</span><span class="zone-name">Belvedere</span></div>
+                        <div class="zone-item" data-zone="bolivar"><span class="zone-icon">📍</span><span class="zone-name">Bolivar</span></div>
+                        <div class="zone-item" data-zone="brazo oriental"><span class="zone-icon">📍</span><span class="zone-name">Brazo Oriental</span></div>
+                        <div class="zone-item" data-zone="buceo"><span class="zone-icon">📍</span><span class="zone-name">Buceo</span></div>
+                        <div class="zone-item" data-zone="capurro"><span class="zone-icon">📍</span><span class="zone-name">Capurro</span></div>
+                        <div class="zone-item" data-zone="carrasco norte"><span class="zone-icon">📍</span><span class="zone-name">Carrasco Norte</span></div>
+                        <div class="zone-item" data-zone="carrasco"><span class="zone-icon">📍</span><span class="zone-name">Carrasco</span></div>
+                        <div class="zone-item" data-zone="casabó"><span class="zone-icon">📍</span><span class="zone-name">Casabó</span></div>
+                        <div class="zone-item" data-zone="casavalle"><span class="zone-icon">📍</span><span class="zone-name">Casavalle</span></div>
+                        <div class="zone-item" data-zone="castro"><span class="zone-icon">📍</span><span class="zone-name">Castro</span></div>
+                        <div class="zone-item" data-zone="centro"><span class="zone-icon">📍</span><span class="zone-name">Centro</span></div>
+                        <div class="zone-item" data-zone="cerrito de la victoria"><span class="zone-icon">📍</span><span class="zone-name">Cerrito de la Victoria</span></div>
+                        <div class="zone-item" data-zone="cerro"><span class="zone-icon">📍</span><span class="zone-name">Cerro</span></div>
+                        <div class="zone-item" data-zone="ciudad de la costa"><span class="zone-icon">📍</span><span class="zone-name">Ciudad de la Costa</span></div>
+                        <div class="zone-item" data-zone="ciudad vieja"><span class="zone-icon">📍</span><span class="zone-name">Ciudad Vieja</span></div>
+                        <div class="zone-item" data-zone="colinas de solymar"><span class="zone-icon">📍</span><span class="zone-name">Colinas de Solymar</span></div>
+                        <div class="zone-item" data-zone="colón"><span class="zone-icon">📍</span><span class="zone-name">Colón</span></div>
+                        <div class="zone-item" data-zone="colonia nicolich"><span class="zone-icon">📍</span><span class="zone-name">Colonia Nicolich</span></div>
+                        <div class="zone-item" data-zone="conciliación"><span class="zone-icon">📍</span><span class="zone-name">Conciliación</span></div>
+                        <div class="zone-item" data-zone="cordón"><span class="zone-icon">📍</span><span class="zone-name">Cordón</span></div>
+                        <div class="zone-item" data-zone="el bosque"><span class="zone-icon">📍</span><span class="zone-name">El Bosque</span></div>
+                        <div class="zone-item" data-zone="el pinar"><span class="zone-icon">📍</span><span class="zone-name">El Pinar</span></div>
+                        <div class="zone-item" data-zone="flor de maroñas"><span class="zone-icon">📍</span><span class="zone-name">Flor de Maroñas</span></div>
+                        <div class="zone-item" data-zone="goes"><span class="zone-icon">📍</span><span class="zone-name">Goes</span></div>
+                        <div class="zone-item" data-zone="ituzaingó"><span class="zone-icon">📍</span><span class="zone-name">Ituzaingó</span></div>
+                        <div class="zone-item" data-zone="jacinto vera"><span class="zone-icon">📍</span><span class="zone-name">Jacinto Vera</span></div>
+                        <div class="zone-item" data-zone="jardines del hipódromo"><span class="zone-icon">📍</span><span class="zone-name">Jardines del Hipódromo</span></div>
+                        <div class="zone-item" data-zone="la blanqueada"><span class="zone-icon">📍</span><span class="zone-name">La Blanqueada</span></div>
+                        <div class="zone-item" data-zone="la comercial"><span class="zone-icon">📍</span><span class="zone-name">La Comercial</span></div>
+                        <div class="zone-item" data-zone="la cruz de carrasco"><span class="zone-icon">📍</span><span class="zone-name">La Cruz de Carrasco</span></div>
+                        <div class="zone-item" data-zone="la esperanza"><span class="zone-icon">📍</span><span class="zone-name">La Esperanza</span></div>
+                        <div class="zone-item" data-zone="la figurita"><span class="zone-icon">📍</span><span class="zone-name">La Figurita</span></div>
+                        <div class="zone-item" data-zone="la mondiola"><span class="zone-icon">📍</span><span class="zone-name">La Mondiola</span></div>
+                        <div class="zone-item" data-zone="la paloma"><span class="zone-icon">📍</span><span class="zone-name">La Paloma</span></div>
+                        <div class="zone-item" data-zone="la paz"><span class="zone-icon">📍</span><span class="zone-name">La Paz</span></div>
+                        <div class="zone-item" data-zone="la teja"><span class="zone-icon">📍</span><span class="zone-name">La Teja</span></div>
+                        <div class="zone-item" data-zone="lagomar"><span class="zone-icon">📍</span><span class="zone-name">Lagomar</span></div>
+                        <div class="zone-item" data-zone="larrañaga"><span class="zone-icon">📍</span><span class="zone-name">Larrañaga</span></div>
+                        <div class="zone-item" data-zone="las acacias"><span class="zone-icon">📍</span><span class="zone-name">Las Acacias</span></div>
+                        <div class="zone-item" data-zone="las canteras"><span class="zone-icon">📍</span><span class="zone-name">Las Canteras</span></div>
+                        <div class="zone-item" data-zone="las piedras"><span class="zone-icon">📍</span><span class="zone-name">Las Piedras</span></div>
+                        <div class="zone-item" data-zone="lavalleja"><span class="zone-icon">📍</span><span class="zone-name">Lavalleja</span></div>
+                        <div class="zone-item" data-zone="lezica"><span class="zone-icon">📍</span><span class="zone-name">Lezica</span></div>
+                        <div class="zone-item" data-zone="lomas de solymar"><span class="zone-icon">📍</span><span class="zone-name">Lomas de Solymar</span></div>
+                        <div class="zone-item" data-zone="los bulevares"><span class="zone-icon">📍</span><span class="zone-name">Los Bulevares</span></div>
+                        <div class="zone-item" data-zone="malvín norte"><span class="zone-icon">📍</span><span class="zone-name">Malvín Norte</span></div>
+                        <div class="zone-item" data-zone="malvín"><span class="zone-icon">📍</span><span class="zone-name">Malvín</span></div>
+                        <div class="zone-item" data-zone="manga"><span class="zone-icon">📍</span><span class="zone-name">Manga</span></div>
+                        <div class="zone-item" data-zone="maroñas"><span class="zone-icon">📍</span><span class="zone-name">Maroñas</span></div>
+                        <div class="zone-item" data-zone="médanos de solymar"><span class="zone-icon">📍</span><span class="zone-name">Médanos de Solymar</span></div>
+                        <div class="zone-item" data-zone="melilla"><span class="zone-icon">📍</span><span class="zone-name">Melilla</span></div>
+                        <div class="zone-item" data-zone="mercado modelo"><span class="zone-icon">📍</span><span class="zone-name">Mercado Modelo</span></div>
+                        <div class="zone-item" data-zone="montes de solymar"><span class="zone-icon">📍</span><span class="zone-name">Montes de Solymar</span></div>
+                        <div class="zone-item" data-zone="nueva savona"><span class="zone-icon">📍</span><span class="zone-name">Nueva Savona</span></div>
+                        <div class="zone-item" data-zone="nuevo parís"><span class="zone-icon">📍</span><span class="zone-name">Nuevo París</span></div>
+                        <div class="zone-item" data-zone="pajas blancas"><span class="zone-icon">📍</span><span class="zone-name">Pajas Blancas</span></div>
+                        <div class="zone-item" data-zone="palermo"><span class="zone-icon">📍</span><span class="zone-name">Palermo</span></div>
+                        <div class="zone-item" data-zone="parque batlle"><span class="zone-icon">📍</span><span class="zone-name">Parque Batlle</span></div>
+                        <div class="zone-item" data-zone="parque carrasco"><span class="zone-icon">📍</span><span class="zone-name">Parque Carrasco</span></div>
+                        <div class="zone-item" data-zone="parque de solymar"><span class="zone-icon">📍</span><span class="zone-name">Parque de Solymar</span></div>
+                        <div class="zone-item" data-zone="parque rodó"><span class="zone-icon">📍</span><span class="zone-name">Parque Rodó</span></div>
+                        <div class="zone-item" data-zone="paso carrasco"><span class="zone-icon">📍</span><span class="zone-name">Paso Carrasco</span></div>
+                        <div class="zone-item" data-zone="paso de la arena"><span class="zone-icon">📍</span><span class="zone-name">Paso de la Arena</span></div>
+                        <div class="zone-item" data-zone="paso de las duranas"><span class="zone-icon">📍</span><span class="zone-name">Paso de las Duranas</span></div>
+                        <div class="zone-item" data-zone="paso molino"><span class="zone-icon">📍</span><span class="zone-name">Paso Molino</span></div>
+                        <div class="zone-item" data-zone="peñarol"><span class="zone-icon">📍</span><span class="zone-name">Peñarol</span></div>
+                        <div class="zone-item" data-zone="pérez castellanos"><span class="zone-icon">📍</span><span class="zone-name">Pérez Castellanos</span></div>
+                        <div class="zone-item" data-zone="piedras blancas"><span class="zone-icon">📍</span><span class="zone-name">Piedras Blancas</span></div>
+                        <div class="zone-item" data-zone="plácido ellauri"><span class="zone-icon">📍</span><span class="zone-name">Plácido Ellauri</span></div>
+                        <div class="zone-item" data-zone="pocitos"><span class="zone-icon">📍</span><span class="zone-name">Pocitos</span></div>
+                        <div class="zone-item" data-zone="prado"><span class="zone-icon">📍</span><span class="zone-name">Prado</span></div>
+                        <div class="zone-item" data-zone="progreso"><span class="zone-icon">📍</span><span class="zone-name">Progreso</span></div>
+                        <div class="zone-item" data-zone="pueblo victoria"><span class="zone-icon">📍</span><span class="zone-name">Pueblo Victoria</span></div>
+                        <div class="zone-item" data-zone="punta carretas"><span class="zone-icon">📍</span><span class="zone-name">Punta Carretas</span></div>
+                        <div class="zone-item" data-zone="punta de rieles"><span class="zone-icon">📍</span><span class="zone-name">Punta de Rieles</span></div>
+                        <div class="zone-item" data-zone="punta gorda"><span class="zone-icon">📍</span><span class="zone-name">Punta Gorda</span></div>
+                        <div class="zone-item" data-zone="reducto"><span class="zone-icon">📍</span><span class="zone-name">Reducto</span></div>
+                        <div class="zone-item" data-zone="retiro"><span class="zone-icon">📍</span><span class="zone-name">Retiro</span></div>
+                        <div class="zone-item" data-zone="san josé de carrasco"><span class="zone-icon">📍</span><span class="zone-name">San José de Carrasco</span></div>
+                        <div class="zone-item" data-zone="santiago vázquez"><span class="zone-icon">📍</span><span class="zone-name">Santiago Vázquez</span></div>
+                        <div class="zone-item" data-zone="sayago"><span class="zone-icon">📍</span><span class="zone-name">Sayago</span></div>
+                        <div class="zone-item" data-zone="shangrilá"><span class="zone-icon">📍</span><span class="zone-name">Shangrilá</span></div>
+                        <div class="zone-item" data-zone="solymar"><span class="zone-icon">📍</span><span class="zone-name">Solymar</span></div>
+                        <div class="zone-item" data-zone="toledo chico"><span class="zone-icon">📍</span><span class="zone-name">Toledo Chico</span></div>
+                        <div class="zone-item" data-zone="toledo"><span class="zone-icon">📍</span><span class="zone-name">Toledo</span></div>
+                        <div class="zone-item" data-zone="tomkinson"><span class="zone-icon">📍</span><span class="zone-name">Tomkinson</span></div>
+                        <div class="zone-item" data-zone="tres cruces"><span class="zone-icon">📍</span><span class="zone-name">Tres Cruces</span></div>
+                        <div class="zone-item" data-zone="tres ombúes"><span class="zone-icon">📍</span><span class="zone-name">Tres Ombúes</span></div>
+                        <div class="zone-item" data-zone="unión"><span class="zone-icon">📍</span><span class="zone-name">Unión</span></div>
+                        <div class="zone-item" data-zone="villa alegría"><span class="zone-icon">📍</span><span class="zone-name">Villa Alegría</span></div>
+                        <div class="zone-item" data-zone="villa biarritz"><span class="zone-icon">📍</span><span class="zone-name">Villa Biarritz</span></div>
+                        <div class="zone-item" data-zone="villa dolores"><span class="zone-icon">📍</span><span class="zone-name">Villa Dolores</span></div>
+                        <div class="zone-item" data-zone="villa española"><span class="zone-icon">📍</span><span class="zone-name">Villa Española</span></div>
+                        <div class="zone-item" data-zone="villa garcía"><span class="zone-icon">📍</span><span class="zone-name">Villa García</span></div>
+                        <div class="zone-item" data-zone="villa muñoz"><span class="zone-icon">📍</span><span class="zone-name">Villa Muñoz</span></div>
                     </div>
                 </div>
+                
+                <div class="zones-stats">
+                    <div class="zone-stat">
+                        <span class="stat-icon">🏘️</span>
+                        <strong class="stat-value" id="total-zones">120+</strong>
+                        <span class="stat-label">Zonas Cubiertas</span>
+                    </div>
+                    <div class="zone-stat">
+                        <span class="stat-icon">⚡</span>
+                        <strong class="stat-value">1-3h</strong>
+                        <span class="stat-label">Tiempo de Respuesta</span>
+                    </div>
+                    <div class="zone-stat">
+                        <span class="stat-icon">🚗</span>
+                        <strong class="stat-value">24/7</strong>
+                        <span class="stat-label">Disponibilidad</span>
+                    </div>
+                </div>
+                
+                <p class="coverage-cta">
+                    ¿No encuentras tu zona? 
+                    <a href="https://api.whatsapp.com/send?phone=59896758200&text=Hola,%20necesito%20consultar%20si%20tienen%20cobertura%20en%20mi%20zona" 
+                       class="inline-whatsapp-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <strong>Consúltanos por WhatsApp</strong> 💬
+                    </a>
+                </p>
             </div>
         </section>
 
@@ -656,7 +813,8 @@
                     <div class="info-card">
                         <div class="info-icon">📍</div>
                         <h4>Zona de Cobertura</h4>
-                        <p>Todo Montevideo</p>
+                        <p>Montevideo y Canelones</p>
+                        <small style="color: var(--color-text-light); font-size: 0.85rem;">Consulte disponibilidad en su zona</small>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">🕒</div>
@@ -733,7 +891,8 @@
                         </ul>
                         <div class="footer-coverage">
                             <h5>Cobertura</h5>
-                            <p>📍 Montevideo y Área Metropolitana</p>
+                            <p>📍 Montevideo y Canelones</p>
+                            <small style="font-size: 0.85rem;">120+ zonas disponibles</small>
                         </div>
                     </div>
 

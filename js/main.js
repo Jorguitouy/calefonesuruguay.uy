@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimations();
     initReadingProgress();
     initScrollToTop();
-    initParallaxEffect();
     initBrandsCarousel();
     initStatsCounter();
     initEmailProtection();
@@ -165,21 +164,170 @@ function initCursorEffects() {
     });
 }
 
-// Inicialización de Zonas
+// Inicialización de Zonas con buscador mejorado
 function initZones() {
-    const zoneLists = {
-        centro: document.querySelector('.zone-group:nth-child(1) .zone-list'),
-        costera: document.querySelector('.zone-group:nth-child(2) .zone-list'),
-        periferia: document.querySelector('.zone-group:nth-child(3) .zone-list')
-    };
+    const carousel = document.querySelector('.zones-carousel');
+    const searchInput = document.querySelector('#zone-search');
+    const searchCount = document.querySelector('.zone-search-results-count');
+    const clearBtn = document.querySelector('#clear-zone-search');
+    
+    if (!carousel) return;
 
-    Object.entries(config.zones).forEach(([key, zones]) => {
-        if (!zoneLists[key]) return;
+    const originalZones = Array.from(carousel.querySelectorAll('.zone-item'));
+    
+    // Duplicar las zonas para efecto infinito
+    const clonedZones = originalZones.map(zone => zone.cloneNode(true));
+    clonedZones.forEach(clone => {
+        carousel.appendChild(clone);
+    });
+    
+    // Duplicar una vez más para asegurar el bucle suave
+    const secondClone = originalZones.map(zone => zone.cloneNode(true));
+    secondClone.forEach(clone => {
+        carousel.appendChild(clone);
+    });
+    
+    const allZones = carousel.querySelectorAll('.zone-item');
+    
+    // Función para limpiar búsqueda
+    const clearSearch = () => {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
+    };
+    
+    // Funcionalidad de búsqueda con validación de seguridad
+    if (searchInput && searchCount) {
+        // Botón de limpiar
+        if (clearBtn) {
+            clearBtn.addEventListener('click', clearSearch);
+        }
         
-        zones.forEach(zone => {
-            const li = document.createElement('li');
-            li.textContent = zone;
-            zoneLists[key].appendChild(li);
+        // Prevenir pegado de contenido malicioso
+        searchInput.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            const sanitized = pastedText.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '').substring(0, 20);
+            searchInput.value = sanitized;
+            searchInput.dispatchEvent(new Event('input'));
+        });
+        
+        // Validación en tiempo real
+        searchInput.addEventListener('input', (e) => {
+            let rawValue = e.target.value;
+            
+            // Sanitizar: solo letras (incluyendo acentos) y espacios, máximo 20 caracteres
+            const sanitized = rawValue.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '').substring(0, 20);
+            
+            // Si el valor fue modificado por sanitización, actualizar el input
+            if (rawValue !== sanitized) {
+                e.target.value = sanitized;
+                rawValue = sanitized;
+            }
+            
+            // Mostrar/ocultar botón de limpiar
+            if (clearBtn) {
+                clearBtn.style.display = rawValue.length > 0 ? 'flex' : 'none';
+            }
+            
+            // Escapar caracteres especiales para prevenir XSS
+            const searchTerm = sanitized.toLowerCase().trim();
+            let visibleCount = 0;
+            
+            if (searchTerm === '') {
+                // Restaurar scroll infinito
+                carousel.classList.remove('no-animation');
+                allZones.forEach(zoneItem => {
+                    zoneItem.style.display = 'flex';
+                    zoneItem.classList.remove('zone-highlight');
+                });
+                searchCount.classList.remove('visible');
+            } else {
+                // Pausar animación durante búsqueda
+                carousel.classList.add('no-animation');
+                
+                // Filtrar solo las zonas originales
+                originalZones.forEach((zoneItem, index) => {
+                    const zoneNameElement = zoneItem.querySelector('.zone-name');
+                    if (!zoneNameElement) return;
+                    
+                    // Obtener texto de forma segura
+                    const zoneName = (zoneNameElement.textContent || zoneNameElement.innerText || '').toLowerCase();
+                    const matches = zoneName.includes(searchTerm);
+                    
+                    // Aplicar a la zona original y sus clones
+                    const originalIndex = index;
+                    const clone1Index = originalZones.length + index;
+                    const clone2Index = originalZones.length * 2 + index;
+                    
+                    if (allZones[originalIndex]) {
+                        allZones[originalIndex].style.display = matches ? 'flex' : 'none';
+                        if (matches) allZones[originalIndex].classList.add('zone-highlight');
+                        else allZones[originalIndex].classList.remove('zone-highlight');
+                    }
+                    if (allZones[clone1Index]) {
+                        allZones[clone1Index].style.display = matches ? 'flex' : 'none';
+                        if (matches) allZones[clone1Index].classList.add('zone-highlight');
+                        else allZones[clone1Index].classList.remove('zone-highlight');
+                    }
+                    if (allZones[clone2Index]) {
+                        allZones[clone2Index].style.display = matches ? 'flex' : 'none';
+                        if (matches) allZones[clone2Index].classList.add('zone-highlight');
+                        else allZones[clone2Index].classList.remove('zone-highlight');
+                    }
+                    
+                    if (matches) visibleCount++;
+                });
+                
+                // Actualizar contador de forma segura (sin usar innerHTML)
+                if (visibleCount > 0) {
+                    searchCount.textContent = `✓ ${visibleCount} zona${visibleCount !== 1 ? 's' : ''} encontrada${visibleCount !== 1 ? 's' : ''}`;
+                    searchCount.style.color = 'var(--color-accent)';
+                } else {
+                    searchCount.textContent = '❌ No se encontraron zonas. Intenta con otro nombre.';
+                    searchCount.style.color = '#ef4444';
+                }
+                searchCount.classList.add('visible');
+            }
+        });
+        
+        // Limpiar búsqueda con ESC
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                clearSearch();
+            }
+        });
+        
+        // Prevenir inyección de scripts
+        searchInput.addEventListener('keypress', (e) => {
+            const char = e.key;
+            // Bloquear caracteres no permitidos
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]$/.test(char) && 
+                !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter', 'Escape'].includes(char)) {
+                e.preventDefault();
+            }
+        });
+    }
+    
+    // Pausar animación en hover (desktop)
+    carousel.addEventListener('mouseenter', () => {
+        carousel.style.animationPlayState = 'paused';
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        if (!carousel.classList.contains('no-animation')) {
+            carousel.style.animationPlayState = 'running';
+        }
+    });
+    
+    // Click en zonas para WhatsApp (opcional)
+    allZones.forEach(zone => {
+        zone.addEventListener('click', () => {
+            const zoneName = zone.querySelector('.zone-name')?.textContent || '';
+            if (zoneName) {
+                const message = encodeURIComponent(`Hola, necesito servicio técnico de calefón en ${zoneName}`);
+                window.open(`https://api.whatsapp.com/send?phone=59896758200&text=${message}`, '_blank');
+            }
         });
     });
 }
@@ -481,27 +629,7 @@ function animateCounter(element, start, end, duration, suffix = '') {
     requestAnimationFrame(update);
 }
 
-// Parallax suave en Hero (solo desktop para mejor performance)
-if (window.innerWidth > 768) {
-    let ticking = false;
-    
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                
-                if (hero && scrolled < hero.offsetHeight) {
-                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-                }
-                
-                ticking = false;
-            });
-            
-            ticking = true;
-        }
-    });
-}
+// Parallax deshabilitado para evitar conflictos con z-index en móvil
 
 // Preload de fuentes para evitar FOIT
 if ('fonts' in document) {
@@ -663,30 +791,9 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// Efecto parallax sutil en el hero
-function initParallaxEffect() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * 0.5;
-                
-                if (scrolled < window.innerHeight) {
-                    hero.style.transform = `translateY(${rate}px)`;
-                    hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-                }
-                
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-}
+// Efecto parallax deshabilitado para evitar conflictos con z-index
+// La función parallax modificaba transform y opacity del hero, 
+// interfiriendo con el stacking context del z-index
 
 // Agregar efecto de ola en los botones
 document.querySelectorAll('.btn').forEach(button => {
@@ -732,10 +839,32 @@ function initBrandsCarousel() {
     
     const allBrands = carousel.querySelectorAll('.brand-link');
     
-    // Funcionalidad de búsqueda
+    // Funcionalidad de búsqueda con validación de seguridad
     if (searchInput && searchCount) {
+        // Prevenir pegado de contenido malicioso
+        searchInput.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            const sanitized = pastedText.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '').substring(0, 15);
+            searchInput.value = sanitized;
+            searchInput.dispatchEvent(new Event('input'));
+        });
+        
+        // Validación en tiempo real
         searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
+            let rawValue = e.target.value;
+            
+            // Sanitizar: solo letras (incluyendo acentos) y espacios, máximo 15 caracteres
+            const sanitized = rawValue.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '').substring(0, 15);
+            
+            // Si el valor fue modificado por sanitización, actualizar el input
+            if (rawValue !== sanitized) {
+                e.target.value = sanitized;
+                rawValue = sanitized;
+            }
+            
+            // Escapar caracteres especiales para prevenir XSS
+            const searchTerm = sanitized.toLowerCase().trim();
             let visibleCount = 0;
             
             if (searchTerm === '') {
@@ -751,7 +880,11 @@ function initBrandsCarousel() {
                 
                 // Filtrar solo las marcas originales
                 originalBrands.forEach((brandLink, index) => {
-                    const brandName = brandLink.querySelector('.brand-name').textContent.toLowerCase();
+                    const brandNameElement = brandLink.querySelector('.brand-name');
+                    if (!brandNameElement) return;
+                    
+                    // Obtener texto de forma segura
+                    const brandName = (brandNameElement.textContent || brandNameElement.innerText || '').toLowerCase();
                     const matches = brandName.includes(searchTerm);
                     
                     // Aplicar a la marca original y sus clones
@@ -759,13 +892,14 @@ function initBrandsCarousel() {
                     const clone1Index = originalBrands.length + index;
                     const clone2Index = originalBrands.length * 2 + index;
                     
-                    allBrands[originalIndex].style.display = matches ? 'block' : 'none';
-                    allBrands[clone1Index].style.display = matches ? 'block' : 'none';
-                    allBrands[clone2Index].style.display = matches ? 'block' : 'none';
+                    if (allBrands[originalIndex]) allBrands[originalIndex].style.display = matches ? 'block' : 'none';
+                    if (allBrands[clone1Index]) allBrands[clone1Index].style.display = matches ? 'block' : 'none';
+                    if (allBrands[clone2Index]) allBrands[clone2Index].style.display = matches ? 'block' : 'none';
                     
                     if (matches) visibleCount++;
                 });
                 
+                // Actualizar contador de forma segura (sin usar innerHTML)
                 searchCount.textContent = `${visibleCount} encontrada${visibleCount !== 1 ? 's' : ''}`;
                 searchCount.classList.add('visible');
             }
@@ -777,6 +911,16 @@ function initBrandsCarousel() {
                 searchInput.value = '';
                 searchInput.dispatchEvent(new Event('input'));
                 searchInput.blur();
+            }
+        });
+        
+        // Prevenir inyección de scripts
+        searchInput.addEventListener('keypress', (e) => {
+            const char = e.key;
+            // Bloquear caracteres no permitidos
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]$/.test(char) && 
+                !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter', 'Escape'].includes(char)) {
+                e.preventDefault();
             }
         });
     }

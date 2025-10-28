@@ -1296,7 +1296,7 @@ footer {
     overflow: visible;
     display: flex;
     align-items: center;
-    padding: calc(var(--spacing-unit) * 8) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     z-index: 100;
     margin-bottom: 0;
 }
@@ -1512,14 +1512,14 @@ footer {
 
 .experience {
     /* Reducido para evitar gran espacio en mobile y mejorar jerarquía visual */
-    padding: calc(var(--spacing-unit) * 8) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
     position: relative;
     overflow: hidden;
     z-index: 50;
     /* Mantener separación pero no excesiva */
-    margin-top: calc(var(--spacing-unit) * -6);
-    padding-top: calc(var(--spacing-unit) * 12);
+    margin-top: calc(var(--spacing-unit) * -4);
+    padding-top: calc(var(--spacing-unit) * 8);
 }
 
 .experience-bg-pattern {
@@ -1669,7 +1669,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: calc(var(--spacing-unit) * 3);
-    margin-top: calc(var(--spacing-unit) * 6);
+    margin-top: calc(var(--spacing-unit) * 4);
 }
 
 .stat-item {
@@ -1784,14 +1784,14 @@ footer {
 /* Quality Commitment Section */
 .quality-commitment {
     /* Reducido para evitar espacio excesivo bajo la lista */
-    padding: calc(var(--spacing-unit) * 6) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-surface);
 }
 
 .quality-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: calc(var(--spacing-unit) * 6);
+    gap: calc(var(--spacing-unit) * 4);
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
@@ -1980,7 +1980,7 @@ footer {
 
 /* Services Section */
 .services {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-surface);
     position: relative;
 }
@@ -2009,7 +2009,7 @@ footer {
 .services h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: calc(var(--spacing-unit) * 6);
+    margin-bottom: calc(var(--spacing-unit) * 4);
     color: var(--color-primary);
     position: relative;
     display: inline-block;
@@ -2209,7 +2209,7 @@ footer {
 
 /* Brands Section */
 .brands-section {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-background);
     overflow: hidden;
     position: relative;
@@ -2562,7 +2562,7 @@ footer {
 
 /* Testimonials Section */
 .testimonials {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
     position: relative;
 }
@@ -2590,7 +2590,7 @@ footer {
 .testimonials h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: calc(var(--spacing-unit) * 6);
+    margin-bottom: calc(var(--spacing-unit) * 4);
     color: var(--color-primary);
 }
 
@@ -2695,7 +2695,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: calc(var(--spacing-unit) * 4);
-    margin-top: calc(var(--spacing-unit) * 6);
+    margin-top: calc(var(--spacing-unit) * 4);
 }
 
 .testimonial-card {
@@ -2759,7 +2759,7 @@ footer {
 
 /* Coverage Section */
 .coverage {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-background);
     position: relative;
 }
@@ -3089,8 +3089,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: calc(var(--spacing-unit) * 3);
-    margin-top: calc(var(--spacing-unit) * 10);
-    margin-bottom: calc(var(--spacing-unit) * 6);
+    margin-top: calc(var(--spacing-unit) * 4);
+    margin-bottom: calc(var(--spacing-unit) * 4);
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -3177,7 +3177,7 @@ footer {
 
 /* FAQ Section */
 .faq-section {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-surface);
 }
 
@@ -3189,7 +3189,7 @@ footer {
 
 .faq-content {
     text-align: center;
-    margin-bottom: calc(var(--spacing-unit) * 6);
+    margin-bottom: calc(var(--spacing-unit) * 4);
 }
 
 .faq-content h2 {
@@ -3363,7 +3363,7 @@ footer {
 
 /* Contact Section */
 .contact-section {
-    padding: calc(var(--spacing-unit) * 10) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     background: var(--color-background);
 }
 
@@ -3373,7 +3373,7 @@ footer {
     padding: 0 calc(var(--spacing-unit) * 2);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: calc(var(--spacing-unit) * 6);
+    gap: calc(var(--spacing-unit) * 4);
 }
 
 .contact-form-container {
@@ -3541,7 +3541,7 @@ footer {
 .cta-banner {
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: white;
-    padding: calc(var(--spacing-unit) * 8) 0;
+    padding: calc(var(--spacing-unit) * 5) 0;
     text-align: center;
 }
 
@@ -3618,14 +3618,14 @@ footer {
 
 /* Footer Content */
 .footer-content {
-    padding: calc(var(--spacing-unit) * 6) 0 calc(var(--spacing-unit) * 4);
+    padding: calc(var(--spacing-unit) * 5) 0 calc(var(--spacing-unit) * 4);
     position: relative;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: calc(var(--spacing-unit) * 5);
+    gap: calc(var(--spacing-unit) * 3);
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -4370,7 +4370,7 @@ footer {
 
     .hero {
         min-height: auto;
-        padding: calc(var(--spacing-unit) * 6) 0;
+        padding: calc(var(--spacing-unit) * 5) 0;
     }
 
     .hero h1 {

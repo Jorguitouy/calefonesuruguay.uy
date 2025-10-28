@@ -4198,13 +4198,13 @@ footer {
 
     /* Mobile: reducir espacios para evitar grandes márgenes debajo del párrafo */
     .experience {
-        padding: calc(var(--spacing-unit) * 4) 0 !important;
+        padding: calc(var(--spacing-unit) * 3) 0 !important;
         margin-top: 0 !important;
-        padding-top: calc(var(--spacing-unit) * 6) !important;
+        padding-top: calc(var(--spacing-unit) * 4) !important;
     }
 
     .experience-content {
-        margin-bottom: calc(var(--spacing-unit) * 2) !important;
+        margin-bottom: calc(var(--spacing-unit) * 1.5) !important;
     }
 
     .experience-description {
@@ -4286,28 +4286,35 @@ footer {
 
     /* Mobile: reducir padding de la sección de calidad para evitar huecos grandes */
     .quality-commitment {
-        padding: calc(var(--spacing-unit) * 4) 0 !important;
+        padding: calc(var(--spacing-unit) * 3) 0 !important;
     }
 
     .quality-content p {
-        margin-bottom: calc(var(--spacing-unit) * 1) !important;
+        margin-bottom: calc(var(--spacing-unit) * 0.75) !important;
     }
+    
+    .quality-grid {
+        gap: calc(var(--spacing-unit) * 2) !important;
+    }
+    
     .quality-list {
         list-style: none;
         padding: 0;
         margin-top: calc(var(--spacing-unit) * 2);
     }
+    
     .quality-list li {
         display: flex;
         align-items: center;
-        gap: calc(var(--spacing-unit) * 1.25);
-        padding: calc(var(--spacing-unit) * 1.25);
-        margin-bottom: calc(var(--spacing-unit) * 1);
+        gap: calc(var(--spacing-unit) * 1);
+        padding: calc(var(--spacing-unit) * 1);
+        margin-bottom: calc(var(--spacing-unit) * 0.75);
         background: var(--color-background);
         border-radius: var(--border-radius);
         transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
         position: relative;
         overflow: hidden;
+        font-size: 0.95rem;
     }
 
     .carousel-nav {
@@ -4319,25 +4326,84 @@ footer {
         font-size: 1.2rem;
     }
 
+    /* Reducir gaps en grillas móvil */
     .services-grid {
         grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2) !important;
     }
 
     .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2) !important;
     }
 
     .coverage-grid {
         grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2) !important;
     }
-
+    
+    /* Reducir padding de tarjetas en móvil */
+    .service-card {
+        padding: calc(var(--spacing-unit) * 2.5) !important;
+        min-height: auto !important;
+    }
+    
+    .testimonial-card {
+        padding: calc(var(--spacing-unit) * 3) !important;
+    }
+    
+    /* Reducir margins de títulos */
+    .services h2,
+    .testimonials h2,
+    .brands-section h2 {
+        margin-bottom: calc(var(--spacing-unit) * 2) !important;
+        font-size: 2rem !important;
+    }
+    
+    /* Reducir gaps en otras grillas */
+    .faq-grid {
+        gap: calc(var(--spacing-unit) * 2) !important;
+    }
+    
     .footer-links,
     .footer-contact {
         text-align: center;
     }
 }
 
+/* Tablet pequeño optimización - transición suave entre 768px y 480px */
+@media (max-width: 600px) {
+    .service-card {
+        padding: calc(var(--spacing-unit) * 2.25) !important;
+        min-height: auto !important;
+    }
+    
+    .testimonial-card {
+        padding: calc(var(--spacing-unit) * 2.75) !important;
+    }
+    
+    .experience {
+        padding: calc(var(--spacing-unit) * 3.5) 0 !important;
+        padding-top: calc(var(--spacing-unit) * 4.5) !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .services h2,
+    .testimonials h2,
+    .brands-section h2 {
+        font-size: 1.9rem !important;
+        margin-bottom: calc(var(--spacing-unit) * 1.75) !important;
+    }
+}
+
 @media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+
     .experience-stats {
         grid-template-columns: 1fr;
     }
@@ -4367,6 +4433,53 @@ footer {
 
     .carousel-nav span {
         font-size: 1rem;
+    }
+    
+    /* Espaciado ultra-reducido para 480px */
+    .service-card {
+        padding: calc(var(--spacing-unit) * 2) !important;
+        min-height: auto !important;
+    }
+    
+    .testimonial-card {
+        padding: calc(var(--spacing-unit) * 2.5) !important;
+    }
+    
+    .experience-badge {
+        font-size: 0.8rem !important;
+        padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2) !important;
+    }
+    
+    .services h2,
+    .testimonials h2,
+    .brands-section h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: calc(var(--spacing-unit) * 1.5) !important;
+    }
+    
+    .hero-content {
+        padding: calc(var(--spacing-unit) * 2) !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-features {
+        gap: calc(var(--spacing-unit) * 0.5) !important;
+    }
+    
+    .feature {
+        font-size: 0.9rem !important;
+        padding: calc(var(--spacing-unit) * 1) !important;
+    }
+    
+    .footer-content {
+        padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 1.5) !important;
+    }
+    
+    .footer-title {
+        font-size: 1.1rem !important;
     }
     
     /* Zonas móvil */
